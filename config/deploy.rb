@@ -1,10 +1,14 @@
 ###
+default_run_options[:pty] = true
 set :use_sudo, false
 set :application, "logstew"
-set :repository,  "git://github.com/robotarmy/logstew.git"
 set :deploy_to, "/home/hvf/deploy/#{application}"
+set :repository,  "git://github.com/robotarmy/logstew.git"
 set :scm, :git
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
+set :branch, 'master'
+set :scm_verbose, true
+set :deploy_via, :remote_cache
+ssh_options[:forward_agent] = true
 
 role :web, "proxy-logstew.robotarmymade.com"                          # Your HTTP server, Apache/etc
 role :app, "app-logstew.robotarmymade.com"                          # This may be the same as your `Web` server
