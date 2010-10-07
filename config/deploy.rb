@@ -20,7 +20,7 @@ role :app, "app.logstew.robotarmymade.com", :primary => true                    
  namespace :deploy do
    task :start do ; end
    task :stop do ; end
-   task :restart, :roles => :app, :except => { :no_release => true } do
-     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+   task :restart, :roles => :app, :except => { :no_release => true } do	
+   	run "touch #{current_release}/tmp/restart.txt"
    end
  end
