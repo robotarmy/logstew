@@ -18,9 +18,10 @@ role :app, "app.logstew.robotarmymade.com", :primary => true                    
 # these http://github.com/rails/irs_process_scripts
 
  namespace :deploy do
-   task :start do ; end
-   task :stop do ; end
+   task :start, :roles => :app, :except => { :no_release => true } do
+   end
+   task :stop, :roles => :app, :except => { :no_release => true } do
+   end
    task :restart, :roles => :app, :except => { :no_release => true } do	
-   	run "touch #{current_release}/tmp/restart.txt"
    end
  end
