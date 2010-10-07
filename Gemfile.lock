@@ -37,12 +37,8 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.0.0)
-    daemon_controller (0.2.5)
     erubis (2.6.6)
       abstract (>= 1.0.0)
-    fastthread (1.0.7)
-    file-tail (1.0.5)
-      spruz (>= 0.1.0)
     highline (1.6.1)
     i18n (0.4.1)
     mail (2.2.6.1)
@@ -57,12 +53,6 @@ GEM
     net-ssh (2.0.23)
     net-ssh-gateway (1.0.1)
       net-ssh (>= 1.99.1)
-    passenger (3.0.0.pre3)
-      daemon_controller (>= 0.2.5)
-      fastthread (>= 1.0.1)
-      file-tail
-      rack
-      rake (>= 0.8.1)
     pg (0.9.0)
     polyglot (0.3.1)
     rack (1.2.1)
@@ -84,17 +74,18 @@ GEM
       rake (>= 0.8.4)
       thor (~> 0.14.0)
     rake (0.8.7)
-    spruz (0.1.5)
     thor (0.14.3)
     treetop (1.4.8)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
+    unicorn (1.1.4)
+      rack
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   capistrano
-  passenger (= 3.0.0.pre3)
   pg
   rails (= 3.0.0)
+  unicorn
