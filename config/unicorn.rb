@@ -6,7 +6,7 @@
    
  working_directory app_path  
    
- listen shared_path + '/unicorn.sock', :backlog => 2048  
+ listen shared_path + '/system/unicorn.sock', :backlog => 2048  
    
  timeout 30  
    
