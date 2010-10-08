@@ -1,4 +1,6 @@
 Logstew::Application.routes.draw do
+  devise_for :stewards
+
   get "welcome/index"
 
   # The priority is based upon order of creation:

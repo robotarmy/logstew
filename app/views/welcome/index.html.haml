@@ -1,0 +1,18 @@
+.welcome 
+	%h1 Welcome
+	%h4  You can join and start logging your Stewardship practice now!
+	%form
+		.email
+			%label Email
+			%input{:tabindex=>0,:type=>'textfield',:name=>'user[email]'}	
+		.login_or_signup
+			.login
+				%input{:tabindex=>1,:type=>:radio, :name =>'login_or_signup',:value => 'login',:checked=>true}
+				%label I'm already a Logger
+			.signup
+				%input{:tabindex=>2,:type=>:radio, :name =>'login_or_signup',:value => 'signup'}
+				%label I'm a new and ready to Log!
+		.password
+			%label Password
+			%input{:tabindex=>3,:type=>'password',:name=>'user[password]'}	
+

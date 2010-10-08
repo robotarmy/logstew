@@ -1,0 +1,29 @@
+$font: Nelvetica Neue, Helvetica, Arial;
+.welcome {
+	h1 {
+ 		font-size: 4em;
+ 		border-bottom: 1em solid #EEE;
+	}
+	h4 {
+ 		font-size: 1.5em;
+ 		border-bottom: 1px solid #EEE;
+	}
+	.email, .password {
+		label {
+			width:200px;
+			display:block;
+		}
+		input {
+			margin-left:2em;
+		}
+	}
+	.login_or_signup {
+		margin-left:2em;
+	}
+
+ font-family: $font;
+ margin-right: 2em;
+ margin-left: 2em;
+ margin-top: 2em;
+ color: #181818;
+}
