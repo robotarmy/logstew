@@ -1,12 +1,13 @@
 set :rvm_type, :system
-set :rvm_ruby_string, 'ruby-1.9.2@rails3' 
+set :rvm_ruby_string, 'ruby-1.9.2' 
 set :use_sudo, false
 set :application, "logstew"
 set :deploy_to, "/home/hvf/deploy/#{application}"
 set :repository,  "git://github.com/robotarmy/logstew.git"
 set :scm, :git
 set :branch, 'master'
-set :deploy_via, :remote_cache
+
+#set :deploy_via, :remote_cache
 ssh_options[:forward_agent] = true
 
 #role :web, "proxy.logstew.robotarmymade.com"                          # Your HTTP server, Apache/etc

@@ -3,9 +3,11 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.0'
 gem 'jquery-rails', '0.1.3'
 gem 'haml-rails'
-group :test, :development do
-  gem 'factory_girl_rails'
+group :development do
   gem 'rails-generators'
+end
+group :test do
+  gem 'factory_girl_rails'
   gem 'wrong'
 end
 # Bundle edge Rails instead:
