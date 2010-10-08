@@ -1,7 +1,9 @@
  deploy_path = '/home/hvf/deploy/logstew/'  
  shared_path = '/home/hvf/deploy/logstew/shared'  
  app_path = deploy_path + 'current'  
-   
+
+ stderr_path shared_path + "/log/unicorn.stderr.log"
+ stdout_path shared_path + "/log/unicorn.stdout.log"  
  worker_processes 1  
    
  working_directory app_path  
