@@ -33,7 +33,7 @@ role :app, "app.logstew.robotarmymade.com", :primary => true                    
      run "kill -USR2 `cat #{deploy_to}/shared/pids/unicorn.pid`"  
    end
    task :start, :roles => :app do
-     run "unicorn -c #{deploy_to}/current/config/unicorn.rb -E production -D config.ru"  
+     run "cd #{deploy_to}/current && bundle exec unicorn -c #{deploy_to}/current/config/unicorn.rb -E production -D config.ru"  
    end
    task :stop, :roles => :app do
      run "kill -QUIT `cat #{deploy_to}/shared/pids/unicorn.pid`"  
