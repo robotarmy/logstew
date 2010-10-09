@@ -39,10 +39,9 @@ class LogsController < ApplicationController
   # POST /logs.xml
   def create
     @log = Log.new(params[:log])
-    p params[:log][:image]
     respond_to do |format|
-      if @log.save!
-        format.html { redirect_to(@log, :notice => 'Log was successfully created.') }
+      if @log.save
+        format.html { redirect_to(log_path, :notice => 'Log was successfully created.') }
         format.xml  { render :xml => @log, :status => :created, :location => @log }
       else
         format.html { render :action => "new" }
