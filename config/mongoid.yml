@@ -16,8 +16,9 @@ test:
 
 # set these environment variables on your prod server
 production:
-   <<: *defaults
+  <<: *defaults
   database: logstew_production
+
 # how i secure mongo?
 #  host: <%= ENV['MONGOID_HOST'] %>
 #  port: <%= ENV['MONGOID_PORT'] %>
