@@ -5,9 +5,13 @@ gem 'jquery-rails', '0.1.3'
 gem 'haml-rails'
 group :development do
   gem 'rails-generators'
+  gem 'hpricot'
 end
 group :test do
   gem 'factory_girl_rails'
+  gem 'cucumber-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
   gem 'wrong'
 end
 # Bundle edge Rails instead:

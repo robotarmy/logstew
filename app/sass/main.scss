@@ -9,21 +9,35 @@ $font: Nelvetica Neue, Helvetica, Arial;
  		border-bottom: 1px solid #EEE;
 	}
 	.email, .password {
+		margin:1em;
+		width:20em;
 		label {
-			width:200px;
-			display:block;
+		float:left;	
 		}
 		input {
+			float:right;
 			margin-left:2em;
 		}
+		clear:both;
 	}
-	.login_or_signup {
+	.enter_as{
 		margin-left:2em;
 	}
-
+	button {
+		margin:1em;
+		font-size:1em;
+	}
  font-family: $font;
  margin-right: 2em;
  margin-left: 2em;
  margin-top: 2em;
  color: #181818;
 }
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    }
+
