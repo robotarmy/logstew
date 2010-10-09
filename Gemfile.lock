@@ -160,6 +160,7 @@ GEM
       ffi (~> 0.6.3)
       json_pure
       rubyzip
+    sendgrid (0.1.4)
     sexp_processor (3.0.5)
     sourcify (0.3.0)
       ruby2ruby (>= 1.2.5)
@@ -204,5 +205,6 @@ DEPENDENCIES
   rails (= 3.0.0)
   rails-generators
   rspec-rails (= 2.0.0.rc)
+  sendgrid
   unicorn
   wrong
