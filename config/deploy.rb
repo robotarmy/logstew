@@ -13,11 +13,9 @@ ssh_options[:forward_agent] = true
 #role :web, "proxy.logstew.robotarmymade.com"                          # Your HTTP server, Apache/etc
 role :app, "app.logstew.robotarmymade.com"
 role :db,  "master.db.logstew.robotarmymade.com",:no_release => true, :primary => true # This is where Rails migrations will run
-#role :db,  ""
 
-# If you are using Passenger mod_rails uncomment this:
-# if you're still using the script/reapear helper you will need
-# these http://github.com/rails/irs_process_scripts
+after "deploy:symlink","deploy:logstew_symlink"
+
 
  namespace :deploy do
   %w(start stop restart).each do |action|   
@@ -26,6 +24,12 @@ role :db,  "master.db.logstew.robotarmymade.com",:no_release => true, :primary =
         find_and_execute_task("unicorn:#{action}")  
      end  
    end 
+   task :logstew_symlinks do
+  run <<-CMD
+      ln -nfs #{shared_path}/system/uploads #{release_path}/public/uploads
+    CMD
+	end
+
  end
 
  namespace :unicorn do
