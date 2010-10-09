@@ -6,17 +6,18 @@ gem 'haml-rails'
 
  gem 'bson_ext'
  gem 'wrong'        
-        gem 'mongoid', '2.0.0.beta.19' 
-        gem 'carrierwave'
+ gem 'mongoid', '2.0.0.beta.19' 
+       gem 'carrierwave'
         gem 'mini_magick'
 
+group :development, :test do
   gem 'rails-generators'
   gem 'hpricot'
   gem 'rspec-rails' ,'2.0.0.rc'
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'database_cleaner'
-
+end
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
