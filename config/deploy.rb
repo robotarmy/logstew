@@ -24,7 +24,7 @@ after "deploy:symlink","deploy:logstew_symlink"
         find_and_execute_task("unicorn:#{action}")  
      end  
    end 
-   task :logstew_symlinks do
+   task :logstew_symlink do
   run <<-CMD
       ln -nfs #{shared_path}/system/uploads #{release_path}/public/uploads
     CMD
