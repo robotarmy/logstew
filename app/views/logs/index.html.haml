@@ -1,0 +1,4 @@
+- @logs.each do |log|
+	%img{:src =>"#{log.image.url}" }
+	%img{:src =>"#{log.image.url(:thumb)}" }
+	%img{:src =>"#{log.image.url(:mini_thumb)}" }
