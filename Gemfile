@@ -3,21 +3,23 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.0'
 gem 'jquery-rails', '0.1.3'
 gem 'haml-rails'
-group :development do
+
+ gem 'bson_ext'
+ gem 'wrong'        
+        gem 'mongoid', '2.0.0.beta.19' 
+        gem 'carrierwave'
+        gem 'mini_magick'
+
   gem 'rails-generators'
   gem 'hpricot'
-end
-group :test do
-  gem 'factory_girl_rails'
+  gem 'rspec-rails' ,'2.0.0.rc'
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'database_cleaner'
-  gem 'wrong'
-end
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'pg'
 gem 'devise'
 # Use unicorn as the web server
 gem 'unicorn'

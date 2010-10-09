@@ -12,7 +12,7 @@ Devise.setup do |config|
   # Load and configure the ORM. Supports :active_record (default) and
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
-  require 'devise/orm/active_record'
+  require 'devise/orm/mongoid'
 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating an user. By default is
@@ -46,7 +46,7 @@ Devise.setup do |config|
   config.encryptor = :bcrypt
 
   # Setup a pepper to generate the encrypted password.
-  config.pepper = "a7e93d4a3a818a38df18efe24f8634cc748a3edeff7b604eda33c9353a3a7933bb875d7a7e3b4b86bedc3aa5d0326c12ed966f46b148e69f10e82bd9b1ddc305"
+  config.pepper = "5f87e9dec581fda0d9740cce6a5af4670388541b5f93a0c58e77dbbffddc5b92be25c279ca4729e7b8c0b468eca36e70152fae01d2ca0323535040bbf6b9c664"
 
   # ==> Configuration for :confirmable
   # The time you want to give your user to confirm his account. During this time
@@ -69,7 +69,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :validatable
   # Range for password length
-  # config.password_length = 6..20
+  config.password_length = 4..20
 
   # Regex to use to validate the email address
   # config.email_regexp = /^([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})$/i
@@ -77,7 +77,7 @@ Devise.setup do |config|
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
   # time the user will be asked for credentials again.
-  # config.timeout_in = 10.minutes
+  config.timeout_in = 10.days
 
   # ==> Configuration for :lockable
   # Defines which strategy will be used to lock an account.
@@ -107,7 +107,7 @@ Devise.setup do |config|
   # Turn scoped views on. Before rendering "sessions/new", it will first check for
   # "users/sessions/new". It's turned off by default because it's slower if you
   # are using only default views.
-  # config.scoped_views = true
+  config.scoped_views = true
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes.
