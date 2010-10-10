@@ -4,16 +4,16 @@
 	- signup_path = steward_registration_url
 	- login_path = steward_session_url
 	.enter_as
-		%input{:tabindex=>1,:type=>:radio, :checked => true,
+		%input{:tabindex=>1,:type=>:radio, :checked => false,
 		       :name => 'enter_as',
 		       :onclick=>"$('#sign_in').show();$('#sign_up').hide()"}
 		%label I'm already a Steward
 	.enter_as
-		%input{:tabindex=>1,:type=>:radio, 
+		%input{:tabindex=>1,:type=>:radio, :checked => true,
 		       :name => 'enter_as',
 		       :onclick=>"$('#sign_in').hide();$('#sign_up').show()"}
 		%label I am a new Steward
-	#sign_in
+	#sign_in{:style => 'display:none'}
 		= form_tag steward_session_path do
 			.email
 				%label Email
@@ -25,17 +25,17 @@
 				= check_box_tag 'steward[remember_me]'
 				%label Remember me
 			= submit_tag 'Enter!'
-	#sign_up{:style => 'display:none'}
+	#sign_up
 		= form_tag steward_registration_path do
 			.email
 				%label Email
 				= text_field_tag 'steward[email]'
 			.password
-				%label Password
-				= password_field_tag 'steward[password]'
+				/%label Password
+				/= password_field_tag 'steward[password]'
 			.password
-				%label Password Confirmation
-				= password_field_tag 'steward[password_confirmation]'
+				/%label Password Confirmation
+				/= password_field_tag 'steward[password_confirmation]'
 
 			= submit_tag 'Sign Up!'
 
