@@ -1,13 +1,12 @@
-%h1 Where are you a Steward?
-%h4 We will be associating your logs with a place - Thank you!
+%h4 We will be associating your logs with a place and your name - Thank you!
 .new 
 	.address
 		=form_for(@address) do |f|
 			.name
-				=f.label :name
+				=f.label What is your name?
 				=f.text_field :name
 			.zip_code
-				=f.label :zipcode
+				=f.label What is your Zip Code?
 				=f.text_field :zipcode
 			.act
 				=f.submit "Set It!"
