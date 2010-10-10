@@ -7,9 +7,9 @@ Given I am a steward with email "exist@robotarmyma.de" and password "exist" and 
 
 Scenario: I sign in without an address set - i am asked to fill it out
 Given I sign in as "exist@robotarmyma.de" with "exist"
-Then I should see "Where are you a Steward?"
+Then I should see "a place and your name"
 When I fill in "address[zipcode]" with "94102"
-When I fill in "address[name]" with "Hayes Valley Farm"
+When I fill in "address[name]" with "Curtis Schofield"
 And I press "Set It!"
 Then I should see "Create Log"
 
