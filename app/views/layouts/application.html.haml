@@ -7,9 +7,9 @@
   = javascript_include_tag :all
   = csrf_meta_tag
  %body
-  = render :partial => 'shared/header'
-  %p.notice
+  .notice
    = notice
-  %p.alert
+  .alert
    = alert
+  = render :partial => 'shared/header'
   = yield 

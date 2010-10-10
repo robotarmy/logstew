@@ -1,2 +1,3 @@
 class StewardsController < ApplicationController
+
 end
