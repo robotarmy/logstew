@@ -21,17 +21,11 @@
 			.password.clearfix
 				%label Password
 				= password_field_tag 'steward[password]'
-			%button Enter!
+				= submit_tag 'Enter!'
 	#sign_up{:style => 'display:none'}
 		= form_tag steward_registration_path do
 			.email
 				%label Email
 				= text_field_tag 'steward[email]'
-			.password
-				%label Password
-				= password_field_tag 'steward[password]'
-			.password.clearfix
-				%label Password Confirm
-				= password_field_tag 'steward[password]'
-			%button Sign Up!
+				= submit_tag 'Sign Up!'
 
