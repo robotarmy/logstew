@@ -1,7 +1,7 @@
 class LogsController < ApplicationController
  before_filter :authenticate_steward!
  def index
-    @logs =  current_steward.logs.all
+    @logs =  current_steward.logs.descending(:updated_at)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,11 +26,9 @@ class LogsController < ApplicationController
     @log = current_steward.logs.build(params[:log])
     respond_to do |format|
       if @log.save
-        format.html { redirect_to(:action =>:index, :notice => 'Log was successfully created.') }
-        format.xml  { render :xml => @log, :status => :created, :location => @log }
+        format.html { redirect_to(logs_path, :notice => 'Log was successfully created.') }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @log.errors, :status => :unprocessable_entity }
       end
     end
   end 
