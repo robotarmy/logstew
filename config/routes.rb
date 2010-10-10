@@ -1,5 +1,4 @@
 Logstew::Application.routes.draw do
-  resources :things
 
   devise_for :stewards
   resources :logs , :only => [:index,:new,:create]
