@@ -1,5 +1,8 @@
 class Steward
   include Mongoid::Document
+ include Mongoid::Timestamps
+	embeds_many :logs
+	index :email, :unique => true
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :database_authenticatable, :registerable,

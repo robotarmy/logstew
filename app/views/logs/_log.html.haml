@@ -1,0 +1,6 @@
+.show
+	.log
+		%img{:src =>"#{log.image.url(:thumb)}" }
+		%p= log.created_at.to_formatted_s(:long_ordinal) 
+		%p= log.story
+

@@ -1,9 +1,12 @@
-=form_for(@log, :html => {:multipart => true}) do |f|
-	.image
-		=f.label :image
-		=f.file_field :image
-	.story
-		=f.label :story
-		=f.text_field :story
-	.act
-		=f.submit
+%h4 Create Log Entry
+.new 
+	.log
+		=form_for(@log, :html => {:multipart => true}) do |f|
+			.image
+				=f.label :image
+				=f.file_field :image
+			.story
+				=f.label :story
+				=f.text_area :story
+			.act
+				=f.submit

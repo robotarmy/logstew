@@ -23,8 +23,10 @@ $font: Nelvetica Neue, Helvetica, Arial;
 	.enter_as{
 		margin-left:2em;
 	}
-	button {
-		margin:1em;
+	input[type=submit] {
+		clear:both;
+		float:right;
+		display:block;
 		font-size:1em;
 	}
  font-family: $font;
