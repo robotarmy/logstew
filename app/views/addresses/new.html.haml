@@ -3,10 +3,10 @@
 	.address
 		=form_for(@address) do |f|
 			.name
-				=f.label What is your name?
+				%label What is your name?
 				=f.text_field :name
 			.zip_code
-				=f.label What is your Zip Code?
+				%label What is your Zip Code?
 				=f.text_field :zipcode
 			.act
 				=f.submit "Set It!"
