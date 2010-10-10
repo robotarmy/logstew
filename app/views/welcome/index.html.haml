@@ -7,12 +7,12 @@
 		%input{:tabindex=>1,:type=>:radio, :checked => false,
 		       :name => 'enter_as',
 		       :onclick=>"$('#sign_in').show();$('#sign_up').hide()"}
-		%label I'm already a Steward
+		%label I'm already registered
 	.enter_as
 		%input{:tabindex=>1,:type=>:radio, :checked => true,
 		       :name => 'enter_as',
 		       :onclick=>"$('#sign_in').hide();$('#sign_up').show()"}
-		%label I am a new Steward
+		%label I am *new*
 	#sign_in{:style => 'display:none'}
 		= form_tag steward_session_path do
 			.email
