@@ -1,22 +1,40 @@
 $font: Nelvetica Neue, Helvetica, Arial;
-.welcome {
+body {
+max-width:480px;
+line-height:1.75em;
+	.header {
+		ul {
+			list-style-type:none;
+			li {
+				float:right;
+				margin:0.2em;
+			}
+		}
+	  clear:both;
+	}
+	h1,h2,h3,h4 {margin:0.01em;padding:0.2em;}
 	h1 {
- 		font-size: 4em;
+ 		font-size: 3em;
  		border-bottom: 1em solid #EEE;
 	}
 	h4 {
  		font-size: 1.5em;
  		border-bottom: 1px solid #EEE;
 	}
-	.email, .password {
+	.email, .password,.remember_me {
 		margin:1em;
-		width:20em;
+		width:25em;
 		label {
 		float:left;	
 		}
 		input {
 			float:right;
 			margin-left:2em;
+			font-size:1.1em;
+		}
+		input[type=checkbox] {
+			float:none;
+			margin-left:6em;
 		}
 		clear:both;
 	}

@@ -4,5 +4,13 @@
     = f.label :email
     %br/
     = f.text_field :email
+  %p
+    = f.label :password
+    %br/
+    = f.text_field :password
+  %p
+    = f.label :password_confirmation
+    %br/
+    = f.text_field :password_confirmation
   %p= f.submit "Sign up"
 = render :partial => "devise/shared/links"

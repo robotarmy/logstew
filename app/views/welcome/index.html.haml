@@ -18,14 +18,25 @@
 			.email
 				%label Email
 				= text_field_tag 'steward[email]'
-			.password.clearfix
+			.password
 				%label Password
 				= password_field_tag 'steward[password]'
-				= submit_tag 'Enter!'
+			.remember_me
+				= check_box_tag 'steward[remember_me]'
+				%label Remember me
+			= submit_tag 'Enter!'
 	#sign_up{:style => 'display:none'}
 		= form_tag steward_registration_path do
 			.email
 				%label Email
 				= text_field_tag 'steward[email]'
-				= submit_tag 'Sign Up!'
+			.password
+				%label Password
+				= password_field_tag 'steward[password]'
+			.password
+				%label Password Confirmation
+				= password_field_tag 'steward[password_confirmation]'
+
+			= submit_tag 'Sign Up!'
+
 

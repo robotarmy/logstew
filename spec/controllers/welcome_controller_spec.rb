@@ -1,8 +1,11 @@
 require 'spec_helper'
 
 describe WelcomeController do
+it "index" do
  get :index
+ r = response
  assert {
-   response.status == :success
+   r.status == :success
 }
+end
 end
