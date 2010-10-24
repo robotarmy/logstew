@@ -1,8 +1,9 @@
 require 'carrierwave/orm/mongoid'
-        class Log
+class Log
           include Mongoid::Document
- include Mongoid::Timestamps
+ 	  include Mongoid::Timestamps
 	  field :story
+	  field :seeds
           mount_uploader :image, ImageUploader
- embedded_in :steward, :inverse_of => :logs
-        end
+ 	  embedded_in :steward, :inverse_of => :logs
+ end
