@@ -8,9 +8,4 @@ class Steward
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :database_authenticatable, :registerable,
 	 :recoverable, :rememberable, :trackable, :validatable
-
-  before_validation do
- 		self.password = 'logstew'
- 		self.password_confirmation = 'logstew'
-end
 end
