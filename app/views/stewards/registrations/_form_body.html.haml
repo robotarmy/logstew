@@ -1,0 +1,21 @@
+.email
+  %label Email
+  = text_field_tag 'steward[email]'
+.password
+  %label Password
+  = password_field_tag 'steward[password]'
+.password
+  %label Password Confirmation
+  = password_field_tag 'steward[password_confirmation]'
+.cc_license
+  %label I'm willing to share my images with the community
+  = check_box_tag 'steward[cc_opt_in]', true,true
+  .cc
+    %a{:rel=>"license", :href=>"http://creativecommons.org/licenses/by-nc-sa/3.0/us/"}
+      %img{:alt=>"Creative Commons License", :style=>"border-width:0", :src=>"http://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png"}
+      Creative Commons Attribution-NonCommercial-ShareAlike 3.0 United States License
+
+
+.submit
+  = submit_tag 'Sign Up!'
+
