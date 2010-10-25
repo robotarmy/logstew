@@ -1,42 +1,33 @@
 .welcome 
-	%h1 Welcome
-	%h4  You can join and start logging your Stewardship practice now!
-	- signup_path = steward_registration_url
-	- login_path = steward_session_url
-	.enter_as
-		%input{:tabindex=>1,:type=>:radio, :checked => true,
-		       :name => 'enter_as',
-		       :onclick=>"$('#sign_in').show();$('#sign_up').hide()"}
-		%label I'm already registered
-	.enter_as
-		%input{:tabindex=>1,:type=>:radio, :checked => false,
-		       :name => 'enter_as',
-		       :onclick=>"$('#sign_in').hide();$('#sign_up').show()"}
-		%label I am *new*
-	#sign_in
-		= form_tag steward_session_path do
-			.email
-				%label Email
-				= text_field_tag 'steward[email]'
-			.password
-				%label Password
-				= password_field_tag 'steward[password]'
-			.remember_me
-				= check_box_tag 'steward[remember_me]'
-				%label Remember me
-			= submit_tag 'Enter!'
-	#sign_up{:style => 'display:none'}
-		= form_tag steward_registration_path do
-			.email
-				%label Email
-				= text_field_tag 'steward[email]'
-			.password
-				%label Password
-				= password_field_tag 'steward[password]'
-			.password
-				%label Password Confirmation
-				= password_field_tag 'steward[password_confirmation]'
-
-			= submit_tag 'Sign Up!'
-
-	= link_to "Forgot your password?", new_password_path(:steward)
+  %h1 Welcome
+  %h4  You can join and start logging your Stewardship practice now!
+  - signup_path = steward_registration_url
+  - login_path = steward_session_url
+  .enter_as
+    %input{:tabindex=>1,:type=>:radio, :checked => true,
+      :name => 'enter_as',
+      :onclick=>"$('#sign_in').show();$('#sign_up').hide()"}
+      %label I'm already registered
+  .enter_as
+    %input{:tabindex=>1,:type=>:radio, :checked => false,
+      :name => 'enter_as',
+      :onclick=>"$('#sign_in').hide();$('#sign_up').show()"}
+      %label I am *new*
+  #sign_in
+    = form_tag steward_session_path do
+      .email
+        %label Email
+        = text_field_tag 'steward[email]'
+      .password
+        %label Password
+        = password_field_tag 'steward[password]'
+      .remember_me
+        = check_box_tag 'steward[remember_me]'
+        %label Remember me
+      .submit
+        = submit_tag 'Enter!'
+  #sign_up{:style => 'display:none'}
+    = form_tag steward_registration_path do
+      = render :partial => 'stewards/registrations/form_body'
+  .clearfix
+  = link_to "Forgot your password?", new_password_path(:steward)

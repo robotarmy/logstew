@@ -1,15 +1,18 @@
 !!!
 %html
- %head
-  %title
-   Stewardship Log
-  = stylesheet_link_tag :all
-  = javascript_include_tag :all
-  = csrf_meta_tag
- %body
-  .notice
-   = notice
-  .alert
-   = alert
-  = render :partial => 'shared/header'
-  = yield 
+  %head
+    %title
+      Stewardship Log
+    = stylesheet_link_tag :all
+    = javascript_include_tag :all
+    = csrf_meta_tag
+  %body
+    = render :partial => 'shared/header'
+    .notice
+      = notice
+    .alert
+      = alert
+    .port
+      = yield 
+    .starboard.clearfix
+      = render_last_posts
