@@ -10,7 +10,8 @@ When I fill in "steward[email]" with "newlogstew@robotarmyma.de" within "#sign_u
 When I fill in "steward[password]" with "newlog" within "#sign_up"
 When I fill in "steward[password_confirmation]" with "newlog" within "#sign_up"
 And I press "Sign Up!"
-Then I should see "Where are you a Steward?"
+Then I should see "What is your name?"
+Then I should see "What is your Zip Code?"
 
 Scenario: I'm an existing steward 
 Given I am a steward with email "exist@robotarmyma.de" and password "exist"

@@ -1,7 +1,32 @@
 $font: Nelvetica Neue, Helvetica, Arial;
 body {
-max-width:480px;
+  width:36.3em;
+  .port{
+    width:26em;
+    border-right:1px solid #ddd;
+    float:left;
+    margin-left: 0.5em;
+    margin-top: 0.1em;
+  }
+  .starboard {
+    margin-right: 0.3em;
+    margin-top: 0.1em;
+    float:right;
+    width:9em;
+    border-right:1px solid #ddd;
+    .log {
+      border-bottom:#181818 3px solid;
+      border-top:#EdEdEd 2px solid;
+      background:#eee;
+      img {
+        width:9em;
+      }
+    }
+  }
 	.header {
+    background:#888888;
+    color:#EEE;
+    min-height:2em;
 		ul {
 			list-style-type:none;
 			li {
@@ -11,7 +36,7 @@ max-width:480px;
 		}
 	  clear:both;
 	}
-	h1,h2,h3,h4 {margin:0.01em;padding:0.2em;}
+	h1,h2,h3,h4 {margin:0em;padding:0em;}
 	h1 {
  		font-size: 3em;
  		border-bottom: 1em solid #EEE;
@@ -20,26 +45,40 @@ max-width:480px;
  		font-size: 1.5em;
  		border-bottom: 1px solid #EEE;
 	}
-	.email, .password,.remember_me {
-		margin:1em;
+	.email, .password,.remember_me, .cc_license,.submit{
+		margin:0.1em;
 		width:25em;
+    background:#ddd;
+    height:4em;
+    padding: 0.2em;
 		label {
-		float:left;	
+      background:#ddd;
+      font-size:1.3em;
 		}
 		input {
 			float:right;
 			margin-left:2em;
 			font-size:1.1em;
 		}
+		input[type=submit] {
+			font-size:2em;
+		}
 		input[type=checkbox] {
-			float:none;
+      font-size:1.2em;
+			float:right;
 			margin-left:6em;
 		}
 		clear:both;
 	}
+
+  .cc_license {
+    height:6em;
+  }
+
 	.enter_as{
 		margin-left:2em;
 	}
+
 	input[type=submit] {
 		clear:both;
 		float:right;
@@ -47,9 +86,6 @@ max-width:480px;
 		font-size:1em;
 	}
  font-family: $font;
- margin-right: 2em;
- margin-left: 2em;
- margin-top: 2em;
  color: #181818;
 }
 .clearfix:after {

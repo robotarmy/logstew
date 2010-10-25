@@ -5,3 +5,4 @@ tmp/**/*
 .*.swp
 .*.swo
 public/uploads
+mongo
