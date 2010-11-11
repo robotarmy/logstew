@@ -6,7 +6,6 @@ class Log
 	  field :story
 	  field :seeds
     mount_uploader :image, ImageUploader
-    validates_presence_of :image
  	  embedded_in :steward, :inverse_of => :logs
     store_in :logs
  end
