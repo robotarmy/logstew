@@ -10,7 +10,7 @@ Given I sign in as "exist@robotarmyma.de" with "exist"
 Then I should see "a place and your name"
 When I fill in "address[zipcode]" with "94102"
 When I fill in "address[name]" with "Curtis Schofield"
-And I press "Set It!"
+And I press "save"
 Then I should see "Create Log"
 
 
