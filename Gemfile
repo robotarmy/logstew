@@ -9,7 +9,7 @@ gem 'wrong'
 gem 'mongoid', '2.0.0.beta.19' 
 gem 'carrierwave'
 gem 'mini_magick'
-
+gem 'bluepill', :git => 'git@github.com:robotarmy/bluepill.git'
 group :development, :test do
   gem 'rails-generators'
   gem 'hpricot'
