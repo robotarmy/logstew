@@ -2,6 +2,7 @@
   size ||= :thumb
   image_url = log.image.url(size)
 .log
+  = link_to('edit', edit_log_path(log), :class => 'edit')
   %p.title= log.title
   = link_to(image_tag(image_url.to_s),
             steward_log_path(log.steward,log), 

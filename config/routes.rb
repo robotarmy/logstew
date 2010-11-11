@@ -2,7 +2,7 @@ Logstew::Application.routes.draw do
 
   devise_for :stewards
   resources :stewards do
-    resources :logs , :only => [:index,:new,:create,:show]
+    resources :logs 
     resources :addresses , :only => [:new,:create]
   end
   get "welcome/index"
