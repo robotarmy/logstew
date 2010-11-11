@@ -1,12 +1,12 @@
 %h4 We will be associating your logs with a place and your name - Thank you!
 .new 
-	.address
-		=form_for(@address) do |f|
-			.name
-				%label What is your name?
-				=f.text_field :name
-			.zip_code
-				%label What is your Zip Code?
-				=f.text_field :zipcode
-			.act
-				=f.submit "Set It!"
+  .address
+    =form_for([current_steward,@address]) do |f|
+      .name
+        %label What is your name?
+        =f.text_field :name
+      .zip_code
+        %label What is your Zip Code?
+        =f.text_field :zipcode
+      .act
+        =f.submit "Set It!"

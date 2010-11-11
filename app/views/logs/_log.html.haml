@@ -1,6 +1,10 @@
-.show
-	.log
-		%img{:src =>"#{log.image.url(:thumb)}" }
-		%p= log.created_at.to_formatted_s(:long_ordinal) 
-		%p= log.story
-
+:ruby
+  size ||= :thumb
+  image_url = log.image.url(size)
+.log
+  %p.title= log.title
+  = link_to(image_tag(image_url),
+            steward_log_path(log.steward,log), 
+            :class => size )
+  %p.date= log.created_at.to_formatted_s(:long_ordinal) 
+  %p.story= log.story

@@ -1,6 +1,8 @@
 .header
-	%ul
-		- if current_steward
-			%li= "I am #{current_steward.email}"
-			%li=link_to('Sign Out',destroy_steward_session_path)
-			%li=link_to('My Stewardship',logs_path)
+  %ul
+    - if current_steward
+      %li=link_to('my Stewardship',logs_path)
+      %li=link_to('new journal entry',new_log_path)
+      %li= "i am #{current_steward.email}"
+      %li=link_to('sign out',destroy_steward_session_path)
+

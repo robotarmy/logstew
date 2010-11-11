@@ -6,6 +6,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   storage :file
   # storage :s3
    
+  version :fourfifty do
+    process :resize_to_fill => [450,253]
+  end
   version :thumb do
     process :resize_to_fill => [160,90]
   end
