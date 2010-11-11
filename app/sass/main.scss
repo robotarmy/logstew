@@ -1,6 +1,20 @@
-$font: Nelvetica Neue, Helvetica, Arial;
+$font: Helvetica Neue, Helvetica, Arial;
+
+$bodysize: 12px;
+
+$h1size: 14pt;
+$h4size: $bodysize;
+$labelsize: 9px;
+$datesize: 8px;
+
 body {
+  background: none repeat scroll 0 0 #F5F4EB ;
+	font-family: $font;
+	font-size: $bodysize;
+	line-height: 1.5em;
+	color: #797971;
   width:36.3em;
+
   .port{
     width:26em;
     border-right:1px solid #ddd;
@@ -24,9 +38,10 @@ body {
     }
   }
 	.header {
-    background:#888888;
+    background:#CDCCC3;
     color:#EEE;
     min-height:2em;
+    margin-bottom:1em;
 		ul {
 			list-style-type:none;
 			li {
@@ -38,18 +53,36 @@ body {
 	}
 	h1,h2,h3,h4 {margin:0em;padding:0em;}
 	h1 {
- 		font-size: 3em;
- 		border-bottom: 1em solid #EEE;
+ 		font-size: 2em;
+    border-bottom:3px solid #CDCCC3
 	}
 	h4 {
- 		font-size: 1.5em;
+ 		font-size: 1em;
+    font-weight:bold;
  		border-bottom: 1px solid #EEE;
 	}
-	.email, .password,.remember_me, .cc_license,.submit{
+
+  h1 {
+    color: #43739E;
+  }
+
+  .title {
+    font-weight:bold;
+  }
+  .description,.title {
+    font-size:$labelsize;
+  }
+  .date {
+    font-size:$datesize;
+  }
+  .enter_as label {
+  }
+ 	.email, .password,.remember_me, .cc_license,.submit{
+    font-size:$labelsize;
 		margin:0.1em;
 		width:25em;
     background:#ddd;
-    height:4em;
+    height:5em;
     padding: 0.2em;
 		label {
       background:#ddd;
@@ -61,7 +94,7 @@ body {
 			font-size:1.1em;
 		}
 		input[type=submit] {
-			font-size:2em;
+			font-size:$labelsize;
 		}
 		input[type=checkbox] {
       font-size:1.2em;
@@ -73,6 +106,7 @@ body {
 
   .cc_license {
     height:6em;
+    height:100%;
   }
 
 	.enter_as{
