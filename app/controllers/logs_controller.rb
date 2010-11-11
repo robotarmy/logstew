@@ -1,5 +1,5 @@
 class LogsController < ApplicationController
- before_filter :authenticate_steward!
+ before_filter :authenticate_steward! , :except => [:show]
  def index
     @logs =  current_steward.logs.descending(:updated_at)
 
