@@ -13,8 +13,15 @@ body {
 	font-size: $bodysize;
 	line-height: 1.5em;
 	color: #797971;
-  width:36.3em;
-
+  width:450px;
+  img {
+    border:0;
+    margin:0;
+    padding:0;
+  }
+  .notice {
+    font-size:$labelsize;
+  }
   .port{
     width:26em;
     border-right:1px solid #ddd;
@@ -44,9 +51,18 @@ body {
     margin-bottom:1em;
 		ul {
 			list-style-type:none;
+      margin:0;
+      padding-left:1em;
 			li {
-				float:right;
+				float:left;
 				margin:0.2em;
+        color: #7777f0;
+        a {
+          color: #FAFAFA;
+        }
+        a:hover {
+          color: #7777f0;
+        }
 			}
 		}
 	  clear:both;
@@ -65,17 +81,30 @@ body {
   h1 {
     color: #43739E;
   }
-
-  .title {
-    font-weight:bold;
-  }
-  .description,.title {
-    font-size:$labelsize;
-  }
-  .date {
-    font-size:$datesize;
+  .log {
+    .title {
+      font-weight:bold;
+    }
+    .story,.title,.seeds {
+      font-size:$labelsize;
+    }
+    .date {
+      font-size:$datesize;
+    }
+    .new_log {
+      label {
+        display:block;
+      }
+    }
+		textarea,input {
+      border:0;
+      padding:0;
+      margin:0;
+      width:100%;
+		}
   }
   .enter_as label {
+    font-size:$datesize;
   }
  	.email, .password,.remember_me, .cc_license,.submit{
     font-size:$labelsize;

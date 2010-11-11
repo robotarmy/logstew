@@ -1,15 +1,18 @@
 %h1 Create Log Entry
 .new 
-	.log
-		=form_for(@log, :html => {:multipart => true}) do |f|
-			.image
-				=f.label :image
-				=f.file_field :image
-			.seeds
-				=f.label :seeds
-				=f.text_field :seeds
-			.story
-				=f.label :story
-				=f.text_area :story
-			.act
-				=f.submit
+  .log
+    =form_for([current_steward,@log], :html => {:multipart => true}) do |f|
+      .image
+        =f.label :image, 'picture'
+        =f.file_field :image
+      .title
+        =f.label :title, 'title'
+        =f.text_field :title
+      .seeds
+        =f.label :seeds, 'a list of plants (comma seperated)'
+        =f.text_field :seeds
+      .story
+        =f.label :story, 'story'
+        =f.text_area :story
+      .act
+        =f.submit 'save'

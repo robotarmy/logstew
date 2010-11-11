@@ -19,7 +19,17 @@ class LogsController < ApplicationController
       format.xml  { render :xml => @log }
     end
   end
-
+  # GET /logs/:id
+  # GET /logs/:id.xml
+  def show
+    Steward.criteria.id(params[:steward_id]).each do  |a|
+      @log = a.logs.find(params[:id])
+    end
+    respond_to do |format|
+      format.html { render :layout => 'show' }
+      format.xml  { render :xml => @log }
+    end
+  end
   # POST /logs
   # POST /logs.xml
   def create
@@ -28,7 +38,7 @@ class LogsController < ApplicationController
       if @log.save
         format.html { redirect_to(logs_path, :notice => 'Log was successfully created.') }
       else
-        format.html { render :action => "new" }
+        format.html { render :action => "new" ,:notice => 'Nope'}
       end
     end
   end 
