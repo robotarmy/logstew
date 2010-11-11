@@ -6,6 +6,8 @@ $h1size: 14pt;
 $h4size: $bodysize;
 $labelsize: 9px;
 $datesize: 8px;
+$link_on_dark:#FAFAFA;
+$link_on_light:#555;
 
 body {
   background: none repeat scroll 0 0 #F5F4EB ;
@@ -14,6 +16,12 @@ body {
 	line-height: 1.5em;
 	color: #797971;
   width:450px;
+  a:visited {
+    color: #0077f0;
+  }
+  a:hover {
+    color: #7777f0;
+  }
   img {
     border:0;
     margin:0;
@@ -58,10 +66,7 @@ body {
 				margin:0.2em;
         color: #7777f0;
         a {
-          color: #FAFAFA;
-        }
-        a:hover {
-          color: #7777f0;
+          color: $link_on_dark;
         }
 			}
 		}
@@ -82,6 +87,14 @@ body {
     color: #43739E;
   }
   .log {
+    a.edit {
+          color: $link_on_light;
+      font-size:$datesize;
+      padding:0;
+      display:inline;
+      margin:0;
+      float:right;
+    }
     .title {
       font-weight:bold;
     }
