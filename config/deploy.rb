@@ -1,5 +1,6 @@
 set :rvm_type, :system
 set :rvm_ruby_string, 'ruby-1.9.2' 
+set :user , :hvf.to_s
 set :use_sudo, false
 set :application, "logstew"
 set :deploy_to, "/home/hvf/deploy/#{application}"
