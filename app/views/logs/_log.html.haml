@@ -3,7 +3,7 @@
   image_url = log.image.url(size)
 .log
   %p.title= log.title
-  = link_to(image_tag(image_url),
+  = link_to(image_tag(image_url.to_s),
             steward_log_path(log.steward,log), 
             :class => size )
   %p.date= log.created_at.to_formatted_s(:long_ordinal) 
