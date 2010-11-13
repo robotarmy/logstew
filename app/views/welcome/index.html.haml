@@ -1,6 +1,7 @@
-.welcome 
+- content_for(:title) do
   %h1 WELCOME
   %h4  You can join and start logging your stewardship => Share a picture and tell a story...
+.welcome 
   - signup_path = steward_registration_url
   - login_path = steward_session_url
   .enter_as
