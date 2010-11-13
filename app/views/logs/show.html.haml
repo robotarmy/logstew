@@ -1,2 +1,5 @@
+- content_for(:title)
+  %h1 SHOW
+  %h4 journal entry
 .show
   = render :partial => 'log', :object => @log, :locals => {:size => :fourfifty}

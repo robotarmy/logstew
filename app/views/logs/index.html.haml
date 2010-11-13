@@ -1,6 +1,7 @@
-%h1=logs_title
-%h4
-  = link_to("new journal entry",new_log_path)
+- content_for(:title) do
+  %h1=logs_title
+  %h4
+    = link_to("new journal entry",new_log_path)
 .index
   - @logs.each do |log|
     = render :partial => 'log', :object => log

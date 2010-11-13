@@ -1,5 +1,6 @@
-%h1 NEW 
-%h4 journal entry
+- content_for(:title)
+  %h1 NEW 
+  %h4 journal entry
 .new 
   .log
     =form_for([current_steward,@log], :html => {:multipart => true}) do |f|
