@@ -19,7 +19,7 @@ body {
 	font-size: $bodysize;
 	line-height: 1.5em;
 	color: #797971;
-  width:620px;
+  width:630px;
   a:visited {
     color: #0077f0;
   }
@@ -35,7 +35,7 @@ body {
     font-size:$labelsize;
   }
   .port{
-    width:25em;
+    width:450px;
     border-right:1px solid #ddd;
     float:left;
     margin-top: 0.1em;
@@ -44,14 +44,14 @@ body {
     margin-right: 0.3em;
     margin-top: 0.1em;
     float:right;
-    width:12em;
+    width:180px;
     border-right:1px solid #ddd;
     .log {
       border-bottom:#181818 3px solid;
       border-top:#EdEdEd 2px solid;
       background:#eee;
       img {
-        width:12em;
+        width:180px;
       }
     }
   }
