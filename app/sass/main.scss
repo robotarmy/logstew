@@ -8,6 +8,7 @@ $labelsize: 14px;
 $subtextsize: 12px;
 $link_on_dark:#FAFAFA;
 $link_on_light:#555;
+$bodywidth:630px;
 $portwidth:28em;
 $starboardwidth:11em;
 body {
@@ -20,7 +21,7 @@ body {
 	font-size: $bodysize;
 	line-height: 1.5em;
 	color: #797971;
-  width:630px;
+  width:$bodywidth;
   a:visited {
     color: #0077f0;
   }
@@ -128,7 +129,7 @@ body {
 		margin:0.1em;
 		width:25em;
     background:#ddd;
-    height:5em;
+    height:4em;
     padding: 0.2em;
 		label {
       background:#ddd;
