@@ -8,12 +8,6 @@
     = csrf_meta_tag
   %body
     = render :partial => 'shared/header'
-    .notice
-      = notice
-    .alert
-      = alert
-    .title
-      = yield :title
     .port
       = yield 
     .starboard.clearfix
