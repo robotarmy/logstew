@@ -5,10 +5,11 @@ $bodysize: 16px;
 $h1size: 20pt;
 $h4size: $bodysize;
 $labelsize: 14px;
-$datesize: 12px;
+$subtextsize: 12px;
 $link_on_dark:#FAFAFA;
 $link_on_light:#555;
-
+$portwidth:28em;
+$starboardwidth:11em;
 body {
   border:0;
   margin:0;
@@ -19,7 +20,7 @@ body {
 	font-size: $bodysize;
 	line-height: 1.5em;
 	color: #797971;
-  width:609px;
+  width:630px;
   a:visited {
     color: #0077f0;
   }
@@ -35,23 +36,23 @@ body {
     font-size:$labelsize;
   }
   .port{
-    width:25em;
+    width:$portwidth;
     border-right:1px solid #ddd;
     float:left;
     margin-top: 0.1em;
   }
   .starboard {
-    margin-right: 0.3em;
+    margin-right: 0.1em;
     margin-top: 0.1em;
     float:right;
-    width:11em;
+    width:$starboardwidth;
     border-right:1px solid #ddd;
     .log {
       border-bottom:#181818 3px solid;
       border-top:#EdEdEd 2px solid;
       background:#eee;
       img {
-        width:11em;
+        width:$starboardwidth;
       }
     }
   }
@@ -92,7 +93,7 @@ body {
   .log {
     a.edit {
           color: $link_on_light;
-      font-size:$datesize;
+      font-size:$subtextsize;
       padding:0;
       display:inline;
       margin:0;
@@ -105,7 +106,7 @@ body {
       font-size:$labelsize;
     }
     .date {
-      font-size:$datesize;
+      font-size:$subtextsize;
     }
     .new_log {
       label {
