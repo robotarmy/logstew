@@ -5,4 +5,10 @@
       %li=link_to('new journal entry',new_log_path)
       %li= "i am #{current_steward.email}"
       %li=link_to('sign out',destroy_steward_session_path)
+.notice
+  = notice
+.alert
+  = alert
+.title
+  = yield :title
 

@@ -22,7 +22,7 @@ class LogsController < ApplicationController
       @log = a.logs.find(params[:id])
     end
     respond_to do |format|
-      format.html { render :layout => 'show' }
+      format.html { render :layout => 'full' }
       format.xml  { render :xml => @log }
     end
   end
