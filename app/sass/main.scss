@@ -1,11 +1,11 @@
 $font: Helvetica Neue, Helvetica, Arial;
 
-$bodysize: 12px;
+$bodysize: 16px;
 
-$h1size: 14pt;
+$h1size: 20pt;
 $h4size: $bodysize;
-$labelsize: 9px;
-$datesize: 8px;
+$labelsize: 14px;
+$datesize: 12px;
 $link_on_dark:#FAFAFA;
 $link_on_light:#555;
 
@@ -15,7 +15,7 @@ body {
 	font-size: $bodysize;
 	line-height: 1.5em;
 	color: #797971;
-  width:450px;
+  width:630px;
   a:visited {
     color: #0077f0;
   }
