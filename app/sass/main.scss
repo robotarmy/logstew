@@ -35,7 +35,7 @@ body {
     font-size:$labelsize;
   }
   .port{
-    width:450px;
+    width:25em;
     border-right:1px solid #ddd;
     float:left;
     margin-top: 0.1em;
@@ -44,14 +44,14 @@ body {
     margin-right: 0.3em;
     margin-top: 0.1em;
     float:right;
-    width:180px;
+    width:11em;
     border-right:1px solid #ddd;
     .log {
       border-bottom:#181818 3px solid;
       border-top:#EdEdEd 2px solid;
       background:#eee;
       img {
-        width:180px;
+        width:11em;
       }
     }
   }
