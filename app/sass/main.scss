@@ -54,12 +54,13 @@ body {
     width:$starboardwidth;
     .log {
       padding-left:4px;
-      line-height:0.8em;
+      line-height:1em;
       border-left:3px solid $linecolor;
       border-bottom:$linecolor 3px solid;
       border-top:#EdEdEd 2px solid;
       background:#eee;
       padding-bottom:1em;
+      font-size:$subtextsize;
       p {
         padding:1px;
       }
