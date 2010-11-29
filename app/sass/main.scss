@@ -1,7 +1,9 @@
 $font: Helvetica Neue, Helvetica, Arial;
 
 $bodysize: 16px;
-
+$color:#797971;
+$background:#F5F4EB;
+$linecolor:#CDCCC3;
 $h1size: 20pt;
 $h4size: $bodysize;
 $labelsize: 14px;
@@ -11,16 +13,20 @@ $link_on_light:#555;
 $bodywidth:630px;
 $portwidth:28em;
 $starboardwidth:11em;
+p {
+  border:0;
+  margin:0;
+  padding:0;
+}
 body {
   border:0;
   margin:0;
   padding:0;
-  
-  background: none repeat scroll 0 0 #F5F4EB ;
 	font-family: $font;
 	font-size: $bodysize;
 	line-height: 1.5em;
-	color: #797971;
+	color: $color;
+  background: none repeat scroll 0 0 $background ;
   width:$bodywidth;
   a:visited {
     color: #0077f0;
@@ -38,7 +44,6 @@ body {
   }
   .port{
     width:$portwidth;
-    border-right:1px solid #ddd;
     float:left;
     margin-top: 0.1em;
   }
@@ -47,18 +52,27 @@ body {
     margin-top: 0.1em;
     float:right;
     width:$starboardwidth;
-    border-right:1px solid #ddd;
     .log {
-      border-bottom:#181818 3px solid;
+      padding-left:4px;
+      line-height:0.8em;
+      border-left:3px solid $linecolor;
+      border-bottom:$linecolor 3px solid;
       border-top:#EdEdEd 2px solid;
       background:#eee;
+      padding-bottom:1em;
+      p {
+        padding:1px;
+      }
+      .date {
+        font-size:$subtextsize - 3px;
+      }
       img {
         width:$starboardwidth;
       }
     }
   }
 	.header {
-    background:#CDCCC3;
+    background:$linecolor;
     color:#EEE;
     min-height:2em;
     margin-bottom:1em;
@@ -80,59 +94,65 @@ body {
 	h1,h2,h3,h4 {margin:0em;padding:0em;}
 	h1 {
  		font-size: 2em;
-    border-bottom:3px solid #CDCCC3
+    border-bottom:3px solid $linecolor
 	}
 	h4 {
  		font-size: 1em;
     font-weight:bold;
- 		border-bottom: 1px solid #EEE;
+ 		border-bottom: 1px solid $linecolor;
 	}
 
   h1 {
     color: #43739E;
   }
+    label {
+        margin-left:1px;
+        font-size:$labelsize;
+        font-variant:small-caps;
+    }
   .log {
-    a.edit {
-          color: $link_on_light;
+    a {
       font-size:$subtextsize;
+      display:inline;
       padding:0;
       display:inline;
       margin:0;
+      color: $link_on_light;
+      text-decoration:none;
+    }
+    a.edit {
+      color: $link_on_light;
       float:right;
-    }
-    .title {
-      font-weight:bold;
-    }
-    .story,.title,.seeds {
-      font-size:$labelsize;
     }
     .date {
       font-size:$subtextsize;
     }
-    .new_log {
-      label {
+    label {
         display:block;
-      }
+        margin-left:1px;
+        background:$background - #111;
+        font-size:$labelsize;
+        font-variant:small-caps;
     }
+  
 		textarea,input {
-      border:0;
-      padding:0;
-      margin:0;
-      width:100%;
+      width:99%;
 		}
   }
   .enter_as label {
     font-size:$labelsize;
   }
+  form {
+    background:$background - #111;
+  }
+  #sign_in form,#sign_up form {
+		width:25em;
+  }
  	.email, .password,.remember_me, .cc_license,.submit{
     font-size:$labelsize;
 		margin:0.1em;
-		width:25em;
-    background:#ddd;
-    height:4em;
     padding: 0.2em;
 		label {
-      background:#ddd;
       font-size:1.3em;
 		}
 		input {
@@ -154,6 +174,11 @@ body {
   .cc_license {
     height:6em;
     height:100%;
+  }
+
+  .cc a span{
+    display:block;
+    font-size:$subtextsize - 2;
   }
 
 	.enter_as{
