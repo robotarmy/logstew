@@ -5,8 +5,8 @@
   if size == :thumb
     log_story = link_to(truncate(log_story,:length => 100),
       steward_log_path(log.steward,log))
-  
   end
+.log
   = link_to('edit', edit_log_path(log), :class => 'edit')
   %p.title= log.title
   = link_to(image_tag(image_url.to_s),
