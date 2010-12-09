@@ -6,7 +6,7 @@ set :application, "logstew"
 set :deploy_to, "/home/hvf/deploy/#{application}"
 set :repository,  "git://github.com/robotarmy/logstew.git"
 set :scm, :git
-set :branch, 'master'
+set :branch, 'replica'
 
 #set :deploy_via, :remote_cache
 ssh_options[:forward_agent] = true
