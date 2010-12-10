@@ -1,5 +1,7 @@
 source 'http://rubygems.org'
 
+gem 'rails'
+
 gem 'haml-rails'
 gem 'sendgrid'
 gem 'bson_ext'
