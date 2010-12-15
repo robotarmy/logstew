@@ -9,10 +9,10 @@ production:
   database: logstew_production
   allow_read_secondary: true
   replica_set:
-    - uri: http://md1.internal
-    - uri: http://md2.internal
-    - uri: http://md3.internal
-    - uri: http://md4.internal
+    - host: md1.internal
+    - host: md2.internal
+    - host: md3.internal
+    - host: md4.internal
 
 development:
   <<: *defaults
