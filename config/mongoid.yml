@@ -1,23 +1,36 @@
 defaults: &defaults
-  host: localhost
   # slaves:
   #   - host: slave1.local
   #     port: 27018
   #   - host: slave2.local
   #     port: 27019
 
+production:
+  database: logstew_production
+  allow_read_secondary: true
+  replica_set:
+    - host: md1.internal
+    - host: md2.internal
+    - host: md3.internal
+    - host: md4.internal
+
 development:
   <<: *defaults
   database: logstew_development
+  replica_set:
+    - uri: http://localhost:27018
+    - uri: http://localhost:27019
 
 test:
   <<: *defaults
+  host: localhost
   database: logstew_test
 
-# set these environment variables on your prod server
-production:
-  <<: *defaults
-  database: logstew_production
+#set these environment variables on your prod server
+#production:
+  #<<: *defaults
+  #host: localhost
+  #database: logstew_production
 
 # how i secure mongo?
 #  host: <%= ENV['MONGOID_HOST'] %>
