@@ -1,4 +1,3 @@
-require 'bundler/capistrano'
 set :rvm_type, :system
 set :rvm_ruby_string, 'ruby-1.9.2' 
 set :user , :hvf.to_s
@@ -7,19 +6,14 @@ set :application, "logstew"
 set :deploy_to, "/home/hvf/deploy/#{application}"
 set :repository,  "git://github.com/robotarmy/logstew.git"
 set :scm, :git
-set :branch, 'replica'
+set :branch, 'master'
 
 #set :deploy_via, :remote_cache
 ssh_options[:forward_agent] = true
 
 #role :web, "proxy.logstew.robotarmymade.com"                          # Your HTTP server, Apache/etc
-#role :app, "app.logstew.robotarmymade.com"
-#role :db,  "master.db.logstew.robotarmymade.com",:no_release => true, :primary => true # This is where Rails migrations will run
-role :app, 
-  "md1.robotarmymade.com",
-  "md2.robotarmymade.com",
-  "md3.robotarmymade.com",
-  "md4.robotarmymade.com"
+role :app, "app.logstew.robotarmymade.com"
+role :db,  "master.db.logstew.robotarmymade.com",:no_release => true, :primary => true # This is where Rails migrations will run
 
 after "deploy:symlink","deploy:logstew_symlink"
 
