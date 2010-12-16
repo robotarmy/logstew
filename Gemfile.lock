@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/robotarmy/mongoid.git
-  revision: f98cf7ace6a351dc5379960388c183a4075753e0
+  revision: a940f882e35edec4214876b9b958a3f6e7fbcb16
   branch: beta
   specs:
     mongoid (2.0.0.beta.20)
@@ -17,7 +17,7 @@ GEM
       sexp_processor (>= 3.0.0)
     RubyInline (3.8.6)
       ZenTest (~> 4.3)
-    ZenTest (4.4.1)
+    ZenTest (4.4.2)
     abstract (1.0.0)
     actionmailer (3.0.3)
       actionpack (= 3.0.3)
@@ -47,8 +47,8 @@ GEM
     activesupport (3.0.3)
     arel (2.0.6)
     bcrypt-ruby (2.1.2)
-    bson (1.1.4)
-    bson_ext (1.1.4)
+    bson (1.1.5)
+    bson_ext (1.1.5)
     builder (2.1.2)
     capistrano (2.5.19)
       highline
@@ -113,8 +113,8 @@ GEM
     mime-types (1.16)
     mini_magick (3.1)
       subexec (~> 0.0.4)
-    mongo (1.1.4)
-      bson (>= 1.1.1)
+    mongo (1.1.5)
+      bson (>= 1.1.5)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
@@ -183,7 +183,7 @@ GEM
     unicorn (3.1.0)
       kgio (~> 2.0.0)
       rack
-    warden (1.0.2)
+    warden (1.0.3)
       rack (>= 1.0.0)
     will_paginate (3.0.pre2)
     wrong (0.5.0)
