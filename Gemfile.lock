@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/robotarmy/mongoid.git
-  revision: a940f882e35edec4214876b9b958a3f6e7fbcb16
+  revision: 649c82068660110efe19283401556f10a091c364
   branch: beta
   specs:
     mongoid (2.0.0.beta.20)
