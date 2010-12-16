@@ -1,17 +1,17 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0'
-gem 'jquery-rails', '0.1.3'
+gem 'rails'
+
 gem 'haml-rails'
 gem 'sendgrid'
 gem 'bson_ext'
-gem 'wrong'        
-gem 'mongoid', '2.0.0.beta.19' 
+gem 'mongoid', :git => 'git://github.com/robotarmy/mongoid.git', :branch => 'beta'
 gem 'carrierwave'
 gem 'mini_magick'
 
 group :development, :test do
   gem 'rails-generators'
+  gem 'wrong'
   gem 'hpricot'
   gem 'rspec-rails' ,'2.0.0.rc'
   gem 'cucumber-rails'
