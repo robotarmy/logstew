@@ -19,6 +19,7 @@ development:
   database: logstew_development
   replica_set:
     - uri: http://localhost:27018
+    - uri: http://localhost:27017
     - uri: http://localhost:27019
 
 test:

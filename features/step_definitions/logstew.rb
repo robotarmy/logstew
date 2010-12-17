@@ -16,5 +16,5 @@ Given 'I am on the home page'
 Then 'I should see "You can join and start"'
 When 'I fill in "steward[email]" with "exist@robotarmyma.de" within "#sign_in"'
 When 'I fill in "steward[password]" with "exist" within "#sign_in"'
-And 'I press "Enter!"'
+And 'I press "enter"'
 end

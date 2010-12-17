@@ -11,6 +11,7 @@ Then I should see "a place and your name"
 When I fill in "address[zipcode]" with "94102"
 When I fill in "address[name]" with "Curtis Schofield"
 And I press "save"
-Then I should see "Create Log"
+Then I should see "NEW"
+Then I should see "journal entry"
 
 
