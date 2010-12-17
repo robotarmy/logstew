@@ -25,4 +25,7 @@
      rescue Errno::ENOENT, Errno::ESRCH  
      end  
    end  
- end  
+ end
+ after_fork do |server,worker|
+   #TODO: Mongoid reconnect replica set support
+ end
