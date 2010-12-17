@@ -16,7 +16,7 @@ ssh_options[:forward_agent] = true
 #role :app, "app.logstew.robotarmymade.com"
 #role :db,  "master.db.logstew.robotarmymade.com",:no_release => true, :primary => true # This is where Rails migrations will run
 role :app, 
-  "md1.robotarmymade.com",
+  "md1.robotarmymade.com"
 #  "md2.robotarmymade.com",
 #  "md3.robotarmymade.com",
 #  "md4.robotarmymade.com"
