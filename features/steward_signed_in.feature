@@ -8,10 +8,10 @@ Given I sign in as "exist@robotarmyma.de" with "exist"
 Scenario: I visit "/"
 Given I am on the welcome_index page
 Then I should not see "You can join and start"
-And I should see "Practice Log"
+And I should see "stewardship journal"
 
 Scenario: I visit "/stewards/sign_in"
 Given I am on the new_steward_session page
 Then I should not see "You can join and start"
-And I should see "Practice Log"
+And I should see "stewardship journal"
 

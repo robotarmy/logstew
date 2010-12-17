@@ -9,7 +9,7 @@ Then I should see "You can join and start"
 When I fill in "steward[email]" with "newlogstew@robotarmyma.de" within "#sign_up"
 When I fill in "steward[password]" with "newlog" within "#sign_up"
 When I fill in "steward[password_confirmation]" with "newlog" within "#sign_up"
-And I press "sign up"
+And I press "save"
 Then I should see "What is your name?"
 Then I should see "What is your Zip Code?"
 
