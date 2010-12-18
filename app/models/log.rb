@@ -7,5 +7,5 @@ class Log
 	  field :seeds
     mount_uploader :image, ImageUploader
  	  embedded_in :steward, :inverse_of => :logs
-    store_in :logs
+    references_many :questions, :stored_as => :array, :inverse_of => :log
  end
