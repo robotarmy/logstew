@@ -1,0 +1,2 @@
+module DittosHelper
+end

@@ -13,11 +13,13 @@ group :development, :test do
   gem 'rails-generators'
   gem 'wrong'
   gem 'hpricot'
-  gem 'rspec-rails' ,'2.0.0.rc'
+  gem 'rspec-rails'
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy'
+  gem 'rails3-generators'
+  gem 'factory_girl_rails'
 end
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
