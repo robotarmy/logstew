@@ -1,11 +1,5 @@
 Logstew::Application.routes.draw do
 
-  resources :dittos
-
-  resources :questions do
-    post :answer
-    post :ditto
-  end
 
   devise_for :stewards
   resources :stewards do
