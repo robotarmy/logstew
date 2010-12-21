@@ -3,3 +3,14 @@
   %h4 journal entry
 .show
   = render :partial => 'log', :object => @log, :locals => {:size => :fourfifty}
+  %div{:id="disqus_thread"}
+    :javascript 
+      var disqus_shortname = 'hvfgardenjournal';
+      var disqus_identifier = '#{log.id}';
+      var disqus_url = '#{steward_log_path(log.steward,log)}';
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
