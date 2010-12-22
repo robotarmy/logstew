@@ -14,4 +14,8 @@ class Steward
   def elder?
     !elder.nil? && elder
   end
+
+  def name
+    address.public_name || address.name || "Anonymous"
+  end
 end

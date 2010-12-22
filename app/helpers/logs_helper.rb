@@ -3,7 +3,7 @@ module LogsHelper
     if @steward == current_steward
       "my stewardship journal"
     else
-      "#{@steward.address.public_name}'s stewardship journal"
+      "#{@steward.name}'s stewardship journal"
     end
   end
   def disqus_for(log)
