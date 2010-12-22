@@ -16,16 +16,16 @@
       %label i am new
   #sign_in
     = form_tag steward_session_path do
-      .email
+      .email.input
         %label Email
         = text_field_tag 'steward[email]'
-      .password
+      .password.input
         %label Password
         = password_field_tag 'steward[password]'
-      .remember_me
+      .remember_me.input
         = check_box_tag 'steward[remember_me]'
         %label Remember me
-      .submit
+      .submit.input
         = submit_tag 'enter'
   #sign_up{:style => 'display:none'}
     = form_tag steward_registration_path do

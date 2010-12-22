@@ -1,13 +1,13 @@
-.email
+.email.input
   %label Email
   = text_field_tag 'steward[email]'
-.password
+.password.input
   %label Password
   = password_field_tag 'steward[password]'
-.password
+.password.input
   %label Password Confirmation
   = password_field_tag 'steward[password_confirmation]'
-.cc_license
+.cc_license.input
   %label I'm willing to share my images with the community
   = check_box_tag 'steward[cc_opt_in]', true,true
   .cc
@@ -15,6 +15,6 @@
       %img{:alt=>"Creative Commons License", :style=>"border-width:0", :src=>"http://i.creativecommons.org/l/by-nc-sa/3.0/us/88x31.png"}
       %span Creative Commons Attribution-NonCommercial-ShareAlike 3.0 United States License
 
-.submit
+.submit.input
   = submit_tag 'save'
 

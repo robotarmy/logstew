@@ -7,6 +7,9 @@ class ApplicationController < ActionController::Base
     if resource.is_a?(Steward)
       if resource.address.blank?
         new_steward_address_path(resource)
+      elsif resource.address.public_name.blank? ||
+            resource.address.public_location_name.blank?
+        new_steward_address_path(resource)
       else
         new_steward_log_path(resource)
       end

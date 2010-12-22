@@ -1,16 +1,6 @@
-:ruby
-  size ||= :thumb
-  image_url = log.image.url(size)
-  log_story = log.story
-  if size == :thumb
-    log_story = link_to(truncate(log_story,:length => 100),
-      steward_log_path(log.steward,log))
-  end
 .log
-  = link_to('edit', edit_log_path(log), :class => 'edit')
+  = edit_for(log)
   %p.title= log.title
-  = link_to(image_tag(image_url.to_s),
-            steward_log_path(log.steward,log), 
-            :class => size )
+  = image_for(log)
   %p.date= log.created_at.to_formatted_s(:long_ordinal) 
-  %p.story= log_story
+  %p.story= story_for(log)
