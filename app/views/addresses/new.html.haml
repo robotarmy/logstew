@@ -1,12 +1,25 @@
-%h4 We will be associating your logs with a place and your name - Thank you!
+%h4 We will be associating you and your logs with a place and your public name.
+%h5 When we ask for a public name - keep in mind that search engines will store this data.
 .new 
   .address
     =form_for([current_steward,@address]) do |f|
-      .name
-        %label What is your name?
-        =f.text_field :name
-      .zip_code
-        %label What is your Zip Code?
+      .public_name.input
+        %label 
+          What would you like your 
+          %strong public 
+          name to be?
+        =f.text_field :public_name
+      .zip_code.input
+        %label 
+          What is your 
+          %strong private 
+          Zip Code?
         =f.text_field :zipcode
-      .act
+      .public_location_name.input
+        %label 
+          What would you like 
+          %strong publicly 
+          displayed as your location?
+        =f.text_field :public_location_name
+      .act.input
         =f.submit "save"
