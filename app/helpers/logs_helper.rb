@@ -39,6 +39,6 @@ module LogsHelper
       log_story = link_to(truncate(log_story,:length => 100),
         steward_log_path(log.steward,log))
     end
-
+    log_story
   end
 end
