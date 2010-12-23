@@ -3,18 +3,20 @@ class ApplicationController < ActionController::Base
 
   private
   include Logs::Path
+
   def after_sign_in_path_for(resource)
     if resource.is_a?(Steward)
-      if resource.address.blank?
-        new_steward_address_path(resource)
-      elsif resource.address.public_name.blank? ||
-            resource.address.public_location_name.blank?
-        new_steward_address_path(resource)
-      else
-        new_steward_log_path(resource)
-      end
+      next_sign_in_step(resource)
     else
       super
+    end
+  end
+
+  def next_sign_in_step(steward)
+    if not steward.complete_address?
+      new_steward_address_path(steward)
+    else
+      new_steward_log_path(steward)
     end
   end
 

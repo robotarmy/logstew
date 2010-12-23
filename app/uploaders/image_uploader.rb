@@ -3,7 +3,8 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::MiniMagick
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  storage :grid_fs
+  #storage :file
   # storage :s3
   version :seventwenty do
     process :resize_to_fill => [720,424]

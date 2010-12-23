@@ -6,7 +6,6 @@ class LogsController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @logs }
     end
   end
 
@@ -14,7 +13,6 @@ class LogsController < ApplicationController
     @log = current_steward.logs.new
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @log }
     end
   end
 
@@ -24,21 +22,14 @@ class LogsController < ApplicationController
     end
     respond_to do |format|
       format.html { render :layout => 'full' }
-      format.xml  { render :xml => @log }
     end
   end
 
   def edit
-    # This is neat - as there is an implied security check
-    # as the edit link is encoded with the current_steward 
-    # and the specific log id
-    Steward.criteria.id(params[:steward_id]).each do  |a|
-      @log = a.logs.find(params[:id])
-    end
-    if @log  # not found
+    @log = current_steward.logs.find(params[:id])
+    if @log
       respond_to do |format|
         format.html
-        format.xml  { render :xml => @log }
       end
     else 
       redirect_to(welcome_index_path)
@@ -46,14 +37,14 @@ class LogsController < ApplicationController
   end
 
   def update
-    Steward.criteria.id(params[:steward_id]).each do  |a|
-      @log = a.logs.find(params[:id])
-    end
+    # update/ edit are short circuited to your own logs
+    @log = current_steward.logs.find(params[:id])
+
     respond_to do |format|
       if @log.update_attributes(params[:log])
         format.html { redirect_to(logs_path, :notice => 'Log was successfully created.') }
       else
-        format.html { render :action => "edit" ,:notice => 'Nope'}
+        format.html { render :action => "edit" ,:notice => ':( something went wrong'}
       end
     end
   end 
@@ -68,8 +59,10 @@ class LogsController < ApplicationController
       end
     end
   end 
+
   def destroy
      backtrace
      logger.info(params)
   end
+
 end
