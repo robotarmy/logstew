@@ -14,18 +14,23 @@ class MoveFileToGridFs
   end
 
   def log_id
-    if not @log
-      @log_id ||= self.local_path.split('log/image/').last.split('/').first 
-    else
-      @log_id = nil
-      log.id
-    end
+    @log_id ||= self.local_path.split('log/image/').last.split('/').first
   end
 
   def log
     @log ||= begin
-      steward = Steward.find(:first, :conditions => {"logs._id" => log_id})
-      steward.logs.where('_id' => log_id).first
+      steward = nil
+      begin
+        ob_id = BSON::ObjectId(log_id)
+      rescue Exception => e
+        return e.message
+      end
+      steward = Steward.find(:first, :conditions => {"logs._id" => ob_id})
+      if steward
+        steward.logs.where('_id' => ob_id).first
+      else 
+        "steward not found for #{log_id}"
+      end
     end
   end
 
@@ -40,9 +45,14 @@ class MoveFileToGridFs
   end
 
   def exists_as_grid
-    gridfs_file = Mongo::GridFileSystem.new(Mongoid.database).open(gridfs_path, 'r')
-    gridfs_file.read
-    true
+    begin
+      exists = false
+      gridfs_file = Mongo::GridFileSystem.new(Mongoid.database).open(gridfs_path, 'r')
+      gridfs_file.read
+      exists = true
+    rescue Exception
+    end
+    exists
   end
 
   def data
