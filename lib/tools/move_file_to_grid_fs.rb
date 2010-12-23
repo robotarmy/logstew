@@ -41,7 +41,7 @@ class MoveFileToGridFs
   end
 
   def gridfs_path
-    "uploads/log/image/#{log.id}/#{log.image_filename}"
+    "#{log.image.store_dir}/#{log.image_filename}"
   end
 
   def exists_as_grid
@@ -50,17 +50,19 @@ class MoveFileToGridFs
       gridfs_file = Mongo::GridFileSystem.new(Mongoid.database).open(gridfs_path, 'r')
       gridfs_file.read
       exists = true
-    rescue Exception
+    rescue Exception => e
+      puts e.message
     end
     exists
   end
 
   def data
     @tempfile ||= begin
-                    Rack::Test::UploadedFile.new(self.local_path)
+                   buf = File.new(self.local_path)
                   end
   end
   def update_grid
-    log.update_attributes(:image => data)
+    log.image = data
+    log.save!
   end
 end
