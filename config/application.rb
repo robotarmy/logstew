@@ -12,7 +12,7 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module Logstew
   class Application < Rails::Application
-    config.autoload_paths += %W(#{config.root}/autoload)
+    config.autoload_paths += %W(#{config.root}/lib/tools)
     config.plugins = [ :all ]
       
     # Activate observers that should always be running.

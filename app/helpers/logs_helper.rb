@@ -1,4 +1,5 @@
 module LogsHelper
+
   def logs_title
     if @steward == current_steward
       "my stewardship journal"
@@ -6,15 +7,18 @@ module LogsHelper
       "#{@steward.name}'s stewardship journal"
     end
   end
+
   def disqus_for(log)
     render :partial =>'logs/helper/disqus_for_log', 
       :locals => {:log => log}
   end
+
   def edit_for(log)
     if log.steward == current_steward
       link_to('edit', edit_log_path(log), :class => 'edit')
     end
   end
+
   def size
     case controller.action_name.to_s.to_sym
       when :index then
@@ -25,6 +29,7 @@ module LogsHelper
         :thumb
       end
   end
+
   def image_for(log)
     image_url = log.image.url(size)
     if image_url
@@ -33,6 +38,7 @@ module LogsHelper
               :class => size )
     end
   end
+
   def story_for(log)
     log_story = log.story
     if size == :thumb
