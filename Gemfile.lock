@@ -46,6 +46,7 @@ GEM
       activesupport (= 3.0.3)
     activesupport (3.0.3)
     arel (2.0.6)
+    autotest-rails-pure (4.1.2)
     bcrypt-ruby (2.1.2)
     bson (1.1.5)
     bson_ext (1.1.5)
@@ -213,6 +214,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autotest-rails-pure
   bson_ext
   capistrano
   capybara
