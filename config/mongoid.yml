@@ -24,14 +24,12 @@ development:
 
 test:
   <<: *defaults
-  host: localhost
+  replica_set:
+    - uri: http://localhost:27018
+    - uri: http://localhost:27017
+    - uri: http://localhost:27019
   database: logstew_test
 
-#set these environment variables on your prod server
-#production:
-  #<<: *defaults
-  #host: localhost
-  #database: logstew_production
 
 # how i secure mongo?
 #  host: <%= ENV['MONGOID_HOST'] %>
