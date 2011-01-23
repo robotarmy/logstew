@@ -17,6 +17,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'cucumber-rails'
   gem 'capybara'
+  gem 'ruby-debug19'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'rails3-generators'
