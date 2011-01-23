@@ -4,6 +4,14 @@ describe Steward do
   let(:steward) do
     Factory(:steward)
   end
+  context "name" do
+    it 'has a public name' do
+      #no name
+      steward.name.should == 'Anonymous'
+      steward.build_address(:public_name => 'Tom')
+      steward.name.should == 'Tom'
+    end
+  end
   context "address" do
     it "does not have complete_addreess?" do
       steward.build_address()

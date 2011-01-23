@@ -9,7 +9,7 @@ $h4size: $bodysize;
 $labelsize: 14px;
 $subtextsize: 12px;
 $link_on_dark:#FAFAFA;
-$link_on_light:#555;
+$link_on_light:#181818;
 $bodywidth:630px;
 $portwidth:28em;
 $starboardwidth:11em;
@@ -74,7 +74,7 @@ body {
   }
 	.header {
     background:$linecolor;
-    color:#EEE;
+    color:#181818;
     min-height:2em;
     margin-bottom:1em;
 		ul {
@@ -86,7 +86,7 @@ body {
 				margin:0.2em;
         color: #7777f0;
         a {
-          color: $link_on_dark;
+          color: $link_on_light;
         }
 			}
 		}
