@@ -1,6 +1,7 @@
 - content_for(:title) do
   %h1 SHOW
-  %h4 journal entry
+  %h5
+    =link_to "see more journal entries by #{@log.creator_name}",steward_logs_path(@log.steward) 
 .show
   = render :partial => 'log', :object => @log, :locals => {:size => :fourfifty}
   = disqus_for(@log)
