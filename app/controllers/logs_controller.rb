@@ -11,6 +11,7 @@ class LogsController < ApplicationController
 
   def new
     @log = current_steward.logs.new
+    @steward = @log.steward
     respond_to do |format|
       format.html # new.html.erb
     end
@@ -19,6 +20,7 @@ class LogsController < ApplicationController
   def show
     Steward.criteria.id(params[:steward_id]).each do  |a|
       @log = a.logs.find(params[:id])
+      @steward = @log.steward
     end
     respond_to do |format|
       format.html { render :layout => 'full' }
@@ -27,6 +29,7 @@ class LogsController < ApplicationController
 
   def edit
     @log = current_steward.logs.find(params[:id])
+    @steward = @log.steward
     if @log
       respond_to do |format|
         format.html
@@ -39,6 +42,7 @@ class LogsController < ApplicationController
   def update
     # update/ edit are short circuited to your own logs
     @log = current_steward.logs.find(params[:id])
+    @steward = @log.steward
 
     respond_to do |format|
       if @log.update_attributes(params[:log])
@@ -51,6 +55,7 @@ class LogsController < ApplicationController
 
   def create
     @log = current_steward.logs.build(params[:log])
+    @steward = @log.steward
     respond_to do |format|
       if @log.save
         format.html { redirect_to(logs_path, :notice => 'Log was successfully created.') }

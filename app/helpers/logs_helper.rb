@@ -1,10 +1,17 @@
 module LogsHelper
 
+  def current_user_content 
+    if @steward == current_steward
+      capture do
+        yield
+      end
+    end
+  end
   def logs_title
     if @steward == current_steward
       "my stewardship journal"
     else
-      "#{@steward.name}'s stewardship journal"
+      "#{@steward.name.capitalize}'s stewardship journal"
     end
   end
 
