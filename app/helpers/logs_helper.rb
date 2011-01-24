@@ -9,9 +9,9 @@ module LogsHelper
   end
   def logs_title
     if @steward == current_steward
-      "my stewardship journal"
+      link_to "my stewardship journal", steward_logs_path(@steward)
     else
-      "#{@steward.name.capitalize}'s stewardship journal"
+      link_to "#{@steward.name.capitalize}'s stewardship journal", steward_logs_path(@steward)
     end
   end
 
@@ -21,7 +21,7 @@ module LogsHelper
   end
 
   def edit_for(log)
-    if log.steward == current_steward
+    current_user_content do
       link_to('edit', edit_log_path(log), :class => 'edit')
     end
   end
@@ -45,7 +45,14 @@ module LogsHelper
               :class => size )
     end
   end
-
+  def title_for(log)
+    title = log.title
+    if size == :thumb
+      title = link_to(log.title,
+        steward_log_path(log.steward,log))
+    end
+    title
+  end
   def story_for(log)
     log_story = log.story
     if size == :thumb

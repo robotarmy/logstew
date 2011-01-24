@@ -23,8 +23,8 @@ describe Log do
     context "wilmas show page" do
       it "has more entries by the same creator" do
         visit(steward_log_path(log.steward,log))
-        debugger
         page.should have_content("Wilma's stewardship journal")
+        page.should have_link("Wilma's stewardship journal")
         click_link "see more journal entries by #{log.creator_name}"
         page.should have_content("stewardship journal")
       end
