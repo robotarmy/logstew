@@ -1,6 +1,6 @@
 .log
   = edit_for(log)
-  %p.title= log.title
+  %p.title= title_for(log)
   = image_for(log)
   %p.date= log.created_at.to_formatted_s(:long_ordinal) 
   %p.story= story_for(log)
