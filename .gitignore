@@ -4,6 +4,7 @@ db/*.sqlite3
 log/*.log
 tmp/**/*
 .*.swp
+md*
 .*.swo
 public/uploads
 mongo
