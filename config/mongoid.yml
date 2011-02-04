@@ -2,14 +2,14 @@ defaults: &defaults
 
 production:
   database: logstew_production
-  uri: http://md1.internal:27017
+  uri: mongodb://md1.internal:27017
 
 development:
   <<: *defaults
   database: logstew_development
-  uri: http://localhost:27017
+  uri: mongodb://localhost:27017
 
 test:
   <<: *defaults
   database: logstew_test
-  uri: http://localhost:27017
+  uri: mongodb://localhost:27017

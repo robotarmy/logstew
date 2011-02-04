@@ -5,9 +5,10 @@ gem 'rails'
 gem 'haml-rails'
 gem 'sendgrid'
 gem 'bson_ext'
-gem 'mongoid', :git => 'git://github.com/robotarmy/mongoid.git', :branch => 'beta'
+gem 'mongoid', '2.0.0.rc.7'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'whenever'
 
 group :development, :test do
   gem 'autotest-rails-pure'

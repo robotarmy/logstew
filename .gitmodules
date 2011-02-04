@@ -1,0 +1,3 @@
+[submodule "script/backup"]
+	path = script/backup
+	url = git@github.com:robotarmy/automongobackup.git
