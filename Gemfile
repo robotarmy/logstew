@@ -1,5 +1,6 @@
 source 'http://rubygems.org'
 
+gem 'ZenTest'
 gem 'rails'
 gem 'haml-rails'
 gem 'sendgrid'
