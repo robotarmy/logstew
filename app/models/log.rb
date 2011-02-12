@@ -5,7 +5,7 @@ class Log
 	  field :title
 	  field :story
 	  field :seeds
-    mount_uploader :image, ImageUploader
+    mount_uploader :image, FileUploader
  	  embedded_in :steward, :inverse_of => :logs
     def creator_name
       steward.name
