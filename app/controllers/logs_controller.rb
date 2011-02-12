@@ -57,10 +57,10 @@ class LogsController < ApplicationController
     @log = current_steward.logs.build(params[:log])
     @steward = @log.steward
     respond_to do |format|
-      if @log.save
+      if @log.save!
         format.html { redirect_to(logs_path, :notice => 'Log was successfully created.') }
       else
-        format.html { render :action => "new" ,:notice => 'Nope'}
+        format.html { render :action => "new" ,:errors => @log.errors}
       end
     end
   end 
