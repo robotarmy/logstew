@@ -14,6 +14,7 @@ def expects(cmd)
 end
 namespace :g do
   task :cap do
+    sh %%bundle%
     sh %%echo 'do g:cap'%
     sh %%cd script/backup ; git add -p ; git commit -am 'backup' ; git push origin master ;%
     sh %%git add -p ; true%

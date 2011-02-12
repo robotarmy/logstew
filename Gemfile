@@ -1,5 +1,5 @@
 source 'http://rubygems.org'
-gem 'backup'
+
 gem 'rails'
 gem 'haml-rails'
 gem 'sendgrid'
