@@ -4,7 +4,7 @@ class FileUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::MiniMagick
 
-  storage :file
+  storage :grid_fs
 
   version :seventwenty do
     process :resize_to_fill => [720,424]
@@ -38,7 +38,7 @@ class FileUploader < CarrierWave::Uploader::Base
   end
 
   def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    "#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
 end
