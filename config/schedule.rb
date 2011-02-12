@@ -8,7 +8,7 @@
 # set :output, "/path/to/my/cron_log.log"
 #
  every 12.hours do
-  command "cd #{Rails.root} && ./script/backup/src/automongobackup.sh"
+  rake "backup:database"
  end
 #   runner "MyModel.some_method"
 #   rake "some:great:rake:task"
