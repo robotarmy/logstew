@@ -13,5 +13,5 @@ Logstew::Application.routes.draw do
   get "welcome/index"
   root :to => "welcome#index"
   get "grid_fs/serve"
-#  match "/images/uploads/*path" => "grid_fs#serve"
+  match "/images/uploads/*path" => "grid_fs#serve"
 end
