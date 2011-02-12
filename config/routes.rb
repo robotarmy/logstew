@@ -6,12 +6,10 @@ Logstew::Application.routes.draw do
     resources :logs 
     resources :addresses , :only => [:new,:create]
   end
-  resource :op, :only =>[] do
+  resource :op do
     get :host
     get :git
   end
   get "welcome/index"
   root :to => "welcome#index"
-  get "grid_fs/serve"
-  match "/images/uploads/*path" => "grid_fs#serve"
 end
