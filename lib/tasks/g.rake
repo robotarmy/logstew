@@ -14,10 +14,11 @@ def curtis
 end
 namespace :g do
   task :cap do
+    sh %%echo 'do g:cap'%
     sh %%git add -p ; true%
     message = 'nolog'
     sh %%git commit -am #{message}%
     sh %%git push origin master%
-    sh %%%
+    sh %%echo 'end g:cap'%
   end
 end
