@@ -14,6 +14,7 @@ module Logstew
   class Application < Rails::Application
     config.autoload_paths += %W(#{config.root}/lib/tools)
     config.plugins = [ :all ]
+    config.metals = ["Gridfs"]
       
     # Activate observers that should always be running.
     # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
