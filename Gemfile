@@ -11,7 +11,6 @@ gem 'mini_magick'
 gem 'whenever'
 
 group :development, :test do
-  gem 'autotest-rails-pure'
   gem 'rails-generators'
   gem 'wrong'
   gem 'hpricot'
