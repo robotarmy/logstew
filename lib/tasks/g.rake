@@ -15,6 +15,7 @@ end
 namespace :g do
   task :cap do
     sh %%echo 'do g:cap'%
+    sh %%cd script/backup ; git add . ; git commit -am 'backup' ; git push origin master ;%
     sh %%git add -p ; true%
     message = 'nolog'
     sh %%git commit -am #{message}%
