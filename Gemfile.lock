@@ -225,7 +225,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  ZenTest
   bson_ext
   capistrano
   capybara

@@ -12,7 +12,7 @@ Capistrano::Configuration.instance(:must_exist).load do
 
   set :git_enable_submodules, 1
 
-  set :deploy_via, :remote_cache
+  set :git_shallow_clone, 1
 
   ssh_options[:forward_agent] = true
 
