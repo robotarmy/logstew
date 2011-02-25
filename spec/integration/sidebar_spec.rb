@@ -24,8 +24,9 @@ describe Log do
       end
       it "has username link" do
         visit(steward_logs_path(log.steward))
-        page.save_and_open_page
-        page.should have_css('.starboard .log .name a')
+        page.should have_css('.starboard .log .name a', :text => log.steward.name)
+        click_link(log.steward.name)
+        current_path.should == steward_logs_path(log.steward)
       end
     end
   end
