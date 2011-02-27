@@ -1,11 +1,11 @@
 require 'spec_helper'
 describe Log do
   let(:wilma) do
-    s = Factory(:steward, :email => 'wilma@example.com')
+    s = Factory(:steward)
     s.create_address(:public_name => :wilma.to_s)
     s
   end
-  let(:my) do
+  let(:me) do
     s = Factory(:steward)
     s.create_address(:public_name => :curtis.to_s)
     s
@@ -15,10 +15,7 @@ describe Log do
   end
   context "log in" do
     before(:each) do
-      visit(steward_session_path)
-      fill_in 'steward[email]', :with => my.email
-      fill_in 'steward[password]', :with => 'histewry'
-      click_button 'enter'
+      sign_in me
     end
     context "wilmas show page" do
       it "has more entries by the same creator" do
@@ -27,6 +24,7 @@ describe Log do
         page.should have_link("Wilma's stewardship journal")
         click_link "see more journal entries by #{log.creator_name}"
         page.should have_content("stewardship journal")
+        page.should have_content('storytime')
       end
     end
   end

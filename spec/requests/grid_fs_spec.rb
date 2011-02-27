@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe GridFs do
   let(:steward) do
-    Factory(:steward,:email => "#{Time.now.to_i}@time.gov")
+    Factory(:steward)
   end
   
   let(:uploader) do
