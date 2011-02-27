@@ -8,7 +8,7 @@ describe Log do
     s
   end
   let(:log) do
-    my.logs.create(:story => 'storytime')
+    my.logs.create(:story => 'storytime', :title => 'cake is nice')
   end
   context "log in" do
     before(:each) do
@@ -21,6 +21,8 @@ describe Log do
       it "has title link" do
         visit(steward_logs_path(log.steward))
         page.should have_css('.starboard .log .title a')
+        click_link(log.title)
+        current_path.should == steward_log_path(log.steward,log)
       end
       it "has username link" do
         visit(steward_logs_path(log.steward))
