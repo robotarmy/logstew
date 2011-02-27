@@ -1,9 +1,8 @@
 module ApplicationHelper
 
-  #TODO: push render_last_posts into a partial
   def render_last_posts
     out = ""
-    Steward.desc(:last_sign_in_at).limit(10).each do |n|
+    Steward.descending(:last_sign_in_at).limit(10).each do |n|
       log =  n.logs.desc(:updated_at).first
       if log
         out = capture do #html_safe
