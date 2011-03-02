@@ -10,7 +10,8 @@ module RSpec::Rails
     include RSpec::Rails::TestUnitAssertionAdapter
     include ActionDispatch::Assertions
     include Capybara
-    include RSpec::Matchers
+    # include this and get infinite loop on 1.9.2 with undef'd methods
+    #include RSpec::Matchers
 
     module InstanceMethods
       def app
