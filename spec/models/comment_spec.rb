@@ -1,12 +1,13 @@
 require 'spec_helper'
 
 describe Comment do
-  let(:steward) do
+
+  let(:author) do
     Factory(:steward)
   end
 
   let(:log) do
-    Factory(:steward).logs.create(:story => 'I made a log')
+    Factory(:log, :story => 'I made a log')
   end
 
   context "cannot be created " do
@@ -16,15 +17,15 @@ describe Comment do
 
     it "without a body" do
       comment.log = log
-      comment.creator = steward
+      comment.author = author
     end
 
     it "without a log" do
       comment.body = 'hola'
-      comment.creator = steward
+      comment.author = author
     end
 
-    it "without a creator" do
+    it "without a author" do
       comment.body = 'hola'
       comment.log = log
     end
@@ -38,7 +39,9 @@ describe Comment do
 
   context "made by a steward and about a log" do
     let(:comment) do
-      Comment.new(:creator => steward, :log => log, :body => '')
+      Comment.new(:author => author,
+                  :log => log, 
+                  :body => '')
     end
 
     it "has a log" do
@@ -46,9 +49,9 @@ describe Comment do
       comment.log_id.should == log.id
     end
 
-    it "has a creator" do
-      comment.creator.should == steward
-      comment.creator_id.should == steward.id
+    it "has an author who is different than the log's steward" do
+      comment.author.should ==  author
+      comment.author_id.should == author.id
     end
 
     it "can be saved if it has a non-empty body" do
@@ -58,15 +61,20 @@ describe Comment do
       }.should_not raise_error
     end
   end
+
   context "are accessable" do
+    let(:log2) do
+      Factory(:log, :story => 'hi')
+    end
+
     before do
-      @a = Comment.create! :creator => steward, :log => log, :body => 'hello'
-      @b = Comment.create! :creator => steward, :log => log, :body => 'hola'
-      @c = Comment.create! :creator => steward, :log => log, :body => 'bonjour'
+      @a = Comment.create! :author => author,  :log => log, :body => 'hello'
+      @b = Comment.create! :author => author,  :log => log, :body => 'hola'
+      @c = Comment.create! :author => author,  :log => log2, :body => 'eat it'
     end
 
     it "from log" do
-      log.comments.should == [@a,@b,@c]
+      log.comments.should == [@a,@b]
     end
   end
 end
