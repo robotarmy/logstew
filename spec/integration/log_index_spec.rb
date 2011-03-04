@@ -7,7 +7,7 @@ describe Log do
   end
 
   let(:log) do
-    steward.logs.create(:story => 'storytime')
+    Factory(:log, :story => 'storytime')
   end
 
   context "log in" do

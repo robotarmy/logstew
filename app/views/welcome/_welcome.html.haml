@@ -1,0 +1,15 @@
+.welcome 
+  .enter_as
+    %input{:tabindex=>1,:type=>:radio, :checked => true,
+      :name => 'enter_as',
+      :onclick=>"$('#sign_in').show();$('#sign_up').hide()"}
+      %label i am already registered
+  .enter_as
+    %input{:tabindex=>1,:type=>:radio, :checked => false,
+      :name => 'enter_as',
+      :onclick=>"$('#sign_in').hide();$('#sign_up').show()"}
+      %label i am new
+  = render :partial => 'sign_in'
+  = render :partial => 'sign_up'
+  .clearfix
+  = link_to "Forgot your password?", new_password_path(:steward)

@@ -1,5 +1,10 @@
 module LogsHelper
-
+  def log
+    @log
+  end
+  def logs
+    @logs
+  end
   def current_user_content 
     if @steward == current_steward
       capture do
@@ -14,10 +19,13 @@ module LogsHelper
       link_to "#{@steward.name.capitalize}'s stewardship journal", steward_logs_path(@steward)
     end
   end
-
-  def disqus_for(log)
-    render :partial =>'logs/helper/disqus_for_log', 
-      :locals => {:log => log}
+  
+  def new_comments_for(log)
+    render :partial => 'comments/new', :locals => {:log => log}
+  end
+  
+  def comments_for(log)
+    render log.comments
   end
 
   def edit_for(log)
@@ -60,5 +68,13 @@ module LogsHelper
         steward_log_path(log.steward,log))
     end
     log_story
+  end
+
+  def name_for(log)
+    link_to log.steward.name, steward_logs_path(log.steward)
+  end
+
+  def date_for(log)
+    log.created_at.to_formatted_s(:long_ordinal) 
   end
 end
