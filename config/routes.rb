@@ -1,7 +1,8 @@
 Logstew::Application.routes.draw do
-
-
   devise_for :stewards
+
+  resources :comments , :only => [:create]
+
   resources :stewards do
     resources :logs 
     resources :addresses , :only => [:new,:create]

@@ -1,5 +1,5 @@
 require 'spec_helper'
-describe Log do
+describe 'Sidebar' do
   let(:me) do
     s = Factory(:steward)
     s.create_address(:public_name => :sam.to_s, 
@@ -17,11 +17,11 @@ describe Log do
   end
 
   let(:log) do
-    me.logs.create(:story => 'storytime', :title => 'cake is nice')
+    Factory(:log, :story => 'storytime', :title => 'cake is nice')
   end
 
   let(:another_log) do
-    another.logs.create(:story => 'timestore', :title => 'lets grow beans')
+    Factory(:log, :story => 'timestore', :title => 'lets grow beans')
   end
 
   context "log in" do

@@ -2,6 +2,6 @@
   = edit_for(log)
   %p.title= title_for(log)
   = image_for(log)
-  %p.name= link_to log.steward.name, steward_logs_path(log.steward)
-  %p.date= log.created_at.to_formatted_s(:long_ordinal) 
+  %p.name=  name_for(log)
+  %p.date=  date_for(log)
   %p.story= story_for(log)

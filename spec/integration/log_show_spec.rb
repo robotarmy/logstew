@@ -10,9 +10,11 @@ describe Log do
     s.create_address(:public_name => :curtis.to_s)
     s
   end
+
   let(:log) do
-    wilma.logs.create(:story => 'storytime')
+    Factory(:log, :story => 'storytime')
   end
+
   context "log in" do
     before(:each) do
       sign_in me
