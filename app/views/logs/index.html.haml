@@ -4,5 +4,4 @@
     = current_user_content do
       = link_to("new journal entry",new_log_path)
 .index
-  - @logs.each do |log|
-    = render :partial => 'log', :object => log
+  = render logs

@@ -3,7 +3,7 @@
   %h4 journal entry
 .new 
   .log
-    =form_for([current_steward,@log], :html => {:multipart => true}) do |f|
+    =form_for([current_steward,log], :html => {:multipart => true}) do |f|
       .image
         =f.label :image, 'picture'
         =f.file_field :image

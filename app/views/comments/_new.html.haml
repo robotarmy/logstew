@@ -1,0 +1,5 @@
+= form_for Comment.new(:log => log) do |f|
+  = f.label :body
+  = f.text_area :body
+  = f.hidden_field :log_id
+  = f.submit "Post"

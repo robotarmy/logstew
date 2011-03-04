@@ -1,9 +1,12 @@
 class Steward
-
   include Mongoid::Document
   include Mongoid::Timestamps
-  embeds_many :logs
+
+  references_many :logs, :inverse_of => :steward
+  references_many :comments, :inverse_of => :author
+
   embeds_one  :address
+
   field :cc_opt_in
   index :email, :unique => true
 
