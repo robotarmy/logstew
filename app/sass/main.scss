@@ -1,43 +1,32 @@
+body,p,img {border:0;margin:0;padding:0;}
 $font: Helvetica Neue, Helvetica, Arial;
 
-$bodysize: 16px;
+$fontsize: 18px;
 $color:#797971;
-$background:#F5F4EB;
+$background:#FFFFFF; /* F5F4EB; */
 $linecolor:#CDCCC3;
-$h1size: 20pt;
-$h4size: $bodysize;
+$headerbackground:#888782;
 $labelsize: 14px;
 $subtextsize: 12px;
 $link_on_dark:#FAFAFA;
 $link_on_light:#181818;
-$bodywidth:630px;
+$bodywidth:625px;
 $portwidth:28em;
 $starboardwidth:11em;
-p {
-  border:0;
-  margin:0;
-  padding:0;
-}
 body {
-  border:0;
-  margin:0;
-  padding:0;
-	font-family: $font;
-	font-size: $bodysize;
-	line-height: 1.5em;
+  font-family: $font;
+	font-size: $fontsize;
 	color: $color;
-  background: none repeat scroll 0 0 $background ;
+  background: #FFFFFF;
+  background-image: url('../images/header_gradient.png');
+  background-repeat: repeat-x;
+  /* background: none repeat scroll 0 0 $background ; */
   width:$bodywidth;
   a:visited {
     color: #0077f0;
   }
   a:hover {
     color: #7777f0;
-  }
-  img {
-    border:0;
-    margin:0;
-    padding:0;
   }
   .notice {
     font-size:$labelsize;
@@ -74,8 +63,8 @@ body {
     }
   }
 	.header {
-    background:$linecolor;
-    color:#181818;
+    background:$headerbackground;
+    color:#F2F0E4;
     min-height:2em;
     margin-bottom:1em;
 		ul {
@@ -87,29 +76,33 @@ body {
 				margin:0.2em;
         color: #7777f0;
         a {
-          color: $link_on_light;
+          color: #F2F0E4;
+          text-decoration: none;
         }
 			}
 		}
 	  clear:both;
 	}
-	h1,h2,h3,h4 {margin:0em;padding:0em;}
+	h1,h2,h3,h4 {
+    /* margin:0em; */
+    /* padding:0em; */
+  }
 	h1 {
- 		font-size: 2em;
-    border-bottom:3px solid $linecolor
+ 		font-size: 1.6667em;
+    /* border-bottom:3px solid $linecolor */
 	}
 	h4 {
  		font-size: 1em;
-    font-weight:bold;
- 		border-bottom: 1px solid $linecolor;
+    /* font-weight:bold; */
+ 		/* border-bottom: 1px solid $linecolor; */
 	}
 
   h1 {
-    color: #43739E;
+    color: #5D5D57;
   }
     label {
-        margin-left:1px;
-        font-size:$labelsize;
+        /* margin-left:1px; */
+        /* font-size:$labelsize; */
         font-variant:small-caps;
     }
   .log {
@@ -201,8 +194,8 @@ body {
 		display:block;
 		font-size:1em;
 	}
- font-family: $font;
- color: #181818;
+ /* font-family: $font; */
+ /* color: #181818; */
 }
 .clearfix:after {
     content: ".";
