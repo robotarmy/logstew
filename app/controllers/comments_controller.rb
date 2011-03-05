@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_filter :steward, :log, :body
+  before_filter :log, :body
 
   def new_comment(log)
       Comment.create!(:author => current_steward,

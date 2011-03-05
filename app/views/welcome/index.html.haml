@@ -1,34 +1,4 @@
 - content_for(:title) do
   %h1 WELCOME
   %h4  You can join and start logging your stewardship => Share a picture and tell a story...
-.welcome 
-  - signup_path = steward_registration_url
-  - login_path = steward_session_url
-  .enter_as
-    %input{:tabindex=>1,:type=>:radio, :checked => true,
-      :name => 'enter_as',
-      :onclick=>"$('#sign_in').show();$('#sign_up').hide()"}
-      %label i am already registered
-  .enter_as
-    %input{:tabindex=>1,:type=>:radio, :checked => false,
-      :name => 'enter_as',
-      :onclick=>"$('#sign_in').hide();$('#sign_up').show()"}
-      %label i am new
-  #sign_in
-    = form_tag steward_session_path do
-      .email.input
-        %label Email
-        = text_field_tag 'steward[email]'
-      .password.input
-        %label Password
-        = password_field_tag 'steward[password]'
-      .remember_me.input
-        = check_box_tag 'steward[remember_me]'
-        %label Remember me
-      .submit.input
-        = submit_tag 'enter'
-  #sign_up{:style => 'display:none'}
-    = form_tag steward_registration_path do
-      = render :partial => 'stewards/registrations/form_body'
-  .clearfix
-  = link_to "Forgot your password?", new_password_path(:steward)
+

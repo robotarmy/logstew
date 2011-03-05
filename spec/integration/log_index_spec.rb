@@ -1,5 +1,6 @@
 require 'spec_helper'
-describe Log do
+
+describe "Log Index Page -" do
   let(:steward) do
     s = Factory(:steward)
     s.create_address(:public_name => :sam.to_s)
@@ -10,15 +11,14 @@ describe Log do
     Factory(:log, :story => 'storytime')
   end
 
-  context "log in" do
+  context "After login," do
     before(:each) do
       sign_in steward
     end
 
-    context "index page" do
-      it "has more entries by the same creator" do
+    context " your log index page" do
+      it "shows entries by you" do
         pending
-
       end
     end
   end
