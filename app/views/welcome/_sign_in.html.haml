@@ -1,0 +1,14 @@
+#sign_in
+  = form_tag steward_session_path do
+    .email.input
+      %label Email
+      = text_field_tag 'steward[email]'
+    .password.input
+      %label Password
+      = password_field_tag 'steward[password]'
+    .remember_me.input
+      = check_box_tag 'steward[remember_me]'
+      %label Remember me
+    .submit.input
+      = submit_tag 'enter'
+

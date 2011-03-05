@@ -1,5 +1,5 @@
 .comment
   .author
-    =link_to steward_path(comment.author), comment.author.name
+    =link_to comment.author.name, steward_path(comment.author)
   .body
     = comment.body

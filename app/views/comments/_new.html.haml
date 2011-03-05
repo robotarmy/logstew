@@ -1,5 +1,21 @@
-= form_for Comment.new(:log => log) do |f|
+= form_for Comment.new do |f|
   = f.label :body
   = f.text_area :body
-  = f.hidden_field :log_id
+  -# If i make a Comment.new(:log => log)
+  -# and use
+  -# f.hidden_field log.id
+  -# 
+  -# an error will happen since log.comments
+  -# will now contain that new comment
+  -# the 'render' _comment code that runs
+  -# after 'render' _new will error
+  -# on this partialy constructed object
+  -#
+  -# I am using a hidden_field_tag 
+  -# to pass to the post the log id
+  -# instead of using the form helper
+  -# hidden_field (which runs a method on the 
+  -# new comment instance)
+  -#
+  = hidden_field_tag 'comment[log_id]', log.id
   = f.submit "Post"

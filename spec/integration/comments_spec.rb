@@ -19,11 +19,11 @@ describe Comment do
     end
       it "and post a comment on my own log entry" do
         visit steward_log_path(log.steward,log)
-        page.save_and_open_page
         fill_in 'comment[body]', :with => 'Nice plants'
         click_button 'Post'
         current_path.should == steward_log_path(log.steward,log)
-        within '.log .comment' do
+        page.save_and_open_page
+        within '.comment' do
           page.should have_css('.author a', :text => author.name)
           page.should have_css('.body', :text => 'Nice plants')
         end
