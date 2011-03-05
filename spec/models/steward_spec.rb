@@ -18,11 +18,13 @@ describe Steward do
       assert {
         steward.complete_address? == false
       }
+
       steward.build_address(:public_name => 'Tom')
 
       assert {
         steward.complete_address? == false
       }
+
       steward.build_address(:public_name => "Tom",
                             :public_location_name => "Tom's Place")
 
