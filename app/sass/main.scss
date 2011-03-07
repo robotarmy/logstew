@@ -16,6 +16,11 @@ $link_on_light:#43739E;
 $bodywidth:625px;
 $portwidth:26em;
 $starboardwidth:8em;
+body,p,img,h1,h2,h3,h4 {
+  margin:0;
+  padding:0;
+  border:0;
+}
 body {
   font-family: $font;
 	font-size: $fontsize;
@@ -103,12 +108,11 @@ body {
   }
 	h1 {
  		font-size: 1.6667em;
-    /* border-bottom:3px solid $linecolor */
 	}
 	h4 {
  		font-size: 1em;
-    /* font-weight:bold; */
- 		/* border-bottom: 1px solid $linecolor; */
+    font-weight:bold;
+ 		border-bottom: 1px solid $linecolor;
 	}
 
   h1 {
@@ -116,8 +120,8 @@ body {
     font-weight: 401;
   }
     label {
-        /* margin-left:1px; */
-        /* font-size:$labelsize; */
+        margin-left:1px;
+        font-size:$labelsize;
         font-variant:small-caps;
     }
   .log {
@@ -137,24 +141,29 @@ body {
     .date {
       font-size:$subtextsize;
     }
-    /*
     label {
         display:block;
-        margin-left:1px;
+        margin-left:2px;
         background:$background - #111;
-        font-size:$labelsize;
         font-variant:small-caps;
     }
-    */
   
-		textarea,input {
+		textarea {
       width:99%;
+    }
+    input {
+      width:98%;
 		}
+      input[type=submit] {
+        margin-right:4px;
+        width:99%;
+      }
   }
   .enter_as label {
     font-size:$labelsize;
   }
   form {
+    position:relative;
     background:$background - #111;
     .input {
       font-size:$labelsize;
@@ -172,15 +181,11 @@ body {
       input {
         float:right;
         margin-left:2em;
-        font-size:1.1em;
-      }
-      input[type=submit] {
-        font-size:$labelsize;
+        font-size:1.4em;
+	  	  clear:both;
       }
       input[type=checkbox] {
         font-size:1.2em;
-        float:right;
-        margin-left:6em;
       }
       clear:both;
     }
@@ -204,13 +209,11 @@ body {
 	}
 
 	input[type=submit] {
+    margin-top:10px;
+    font-size:1.2em;
 		clear:both;
-		float:right;
 		display:block;
-		font-size:1em;
 	}
- /* font-family: $font; */
- /* color: #181818; */
 }
 .clearfix:after {
     content: ".";
