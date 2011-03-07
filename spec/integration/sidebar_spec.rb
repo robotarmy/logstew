@@ -26,13 +26,15 @@ describe 'Sidebar -' do
 
   context "After Log in" do
     before(:each) do
+      log
+      another_log
       sign_in me
     end
     context "sidebar page" do
       it "has recent posts" do
         visit(steward_logs_path(log.steward))
         page.save_and_open_page
-        within('.starboard .log') do
+        within('.starboard') do
           page.should have_content(log.title)
           page.should have_content(log.steward.name)
           page.should have_content(another_log.title)
