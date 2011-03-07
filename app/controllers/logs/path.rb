@@ -22,7 +22,7 @@ module Logs
         steward_logs_path(current_steward)
       else
         welcome_index_path
-      end 
+      end
     end
 
     def edit_log_path(log)
