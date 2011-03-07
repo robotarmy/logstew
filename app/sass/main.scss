@@ -7,21 +7,29 @@ $background:#FFFFFF; /* F5F4EB; */
 $linecolor:#CDCCC3;
 $headerbackground:#888782;
 $labelsize: 14px;
-$subtextsize: 12px;
-$link_on_dark:#FAFAFA;
-$link_on_light:#181818;
+$subtextsize: 1em;
+
+$sidebar_text_link_size:0.67em;
+
+$link_on_dark:#F2F0E4;
+$link_on_light:#43739E;
 $bodywidth:625px;
-$portwidth:28em;
-$starboardwidth:11em;
+$portwidth:26em;
+$starboardwidth:8em;
 body {
   font-family: $font;
 	font-size: $fontsize;
 	color: $color;
+  line-height:1.5em;
   background: #FFFFFF;
   background-image: url('../images/header_gradient.png');
   background-repeat: repeat-x;
   /* background: none repeat scroll 0 0 $background ; */
   width:$bodywidth;
+  a {
+    color:$link_on_light;
+    font-weight:bold;
+  }
   a:visited {
     color: #0077f0;
   }
@@ -51,14 +59,20 @@ body {
       background:#eee;
       padding-bottom:1em;
       font-size:$subtextsize;
+      .name a {
+        font-size:$sidebar_text_link_size;
+      }
+      a.edit {
+        font-size:$sidebar_text_link_size;
+      }
       p {
         padding:1px;
       }
       .date {
-        font-size:$subtextsize - 3px;
+        font-size:$subtextsize - 0.3em;
       }
       img {
-        width:$starboardwidth;
+        width:$starboardwidth - 1em;
       }
     }
   }
@@ -76,8 +90,9 @@ body {
 				margin:0.2em;
         color: #7777f0;
         a {
-          color: #F2F0E4;
-          text-decoration: none;
+          color: $link_on_dark;
+          text-decoration: underline;
+          padding:2px;
         }
 			}
 		}
@@ -99,6 +114,7 @@ body {
 
   h1 {
     color: #5D5D57;
+    font-weight: 401;
   }
     label {
         /* margin-left:1px; */
