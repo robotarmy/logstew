@@ -26,6 +26,11 @@ body {
   background-repeat: repeat-x;
   /* background: none repeat scroll 0 0 $background ; */
   width:$bodywidth;
+  p {
+    font-size: .6667em;
+    line-height: 1.6667em;
+    margin-bottom: 2em;
+  }
   a {
     color:$link_on_light;
     font-weight:bold;
