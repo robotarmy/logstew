@@ -1,5 +1,5 @@
 - content_for(:title) do
-  %h1 WELCOME
+  = render :partial => 'welcome_header'
   %p  You can join and start logging your stewardship => Share a picture and tell a story...
 .welcome 
   - signup_path = steward_registration_url
