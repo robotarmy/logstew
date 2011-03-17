@@ -8,9 +8,6 @@ class LogsController < ApplicationController
 
   def index
     @logs =  steward.logs.descending(:updated_at)
-    respond_to do |format|
-      format.html # index.html.erb
-    end
   end
 
   def new
@@ -36,24 +33,20 @@ class LogsController < ApplicationController
     @log = current_steward.logs.find(params[:id])
     @steward = @log.steward
 
-    respond_to do |format|
-      if @log.update_attributes(params[:log])
-          redirect_to(logs_path, :notice => 'Log was successfully created.') 
-      else
-          render :action => "edit" ,:notice => ':( something went wrong'
-      end
+    if @log.update_attributes(params[:log])
+      redirect_to(logs_path, :notice => 'Log was successfully created.') 
+    else
+      render :action => "edit" ,:notice => ':( something went wrong'
     end
   end 
 
   def create
     @log = current_steward.logs.build(params[:log])
     @steward = @log.steward
-    respond_to do |format|
-      if @log.save!
-          redirect_to(logs_path, :notice => 'Log was successfully created.') 
-      else
-          render :action => "new" ,:errors => @log.errors
-      end
+    if @log.save!
+      redirect_to(logs_path, :notice => 'Log was successfully created.') 
+    else
+      render :action => "new" ,:errors => @log.errors
     end
   end 
 
