@@ -18,5 +18,10 @@ Scenario: I'm an existing steward
 Given I am a steward with email "exist@robotarmyma.de" and password "exist"
 Given I sign in as "exist@robotarmyma.de" with "exist"
 Then I should see "new journal entry"
-
-
+When I follow "new journal entry"
+Then I should see "NEW"
+When I fill in "log[story]" with "this is my story" 
+When I fill in "log[title]" with "I have a nice title" 
+And I press "save"
+Then show me the page
+Then I should see "this is my story"
