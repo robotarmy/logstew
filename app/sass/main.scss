@@ -62,7 +62,7 @@ body {
       border-top:#EdEdEd 2px solid;
       background:#eee;
       padding-bottom:1em;
-      font-size:$subtextsize;
+      font-size:$sidebar_text_link_size;
       .name a {
         font-size:$sidebar_text_link_size;
       }
@@ -72,8 +72,11 @@ body {
       p {
         padding:1px;
       }
+      .story {
+        display:none;
+      }
       .date {
-        font-size:$subtextsize - 0.3em;
+        font-size:$subtextsize - 0.1em;
       }
       img {
         width:$starboardwidth - 1em;
