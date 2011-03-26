@@ -1,5 +1,9 @@
 module ApplicationHelper
 
+  def is_current_steward?(steward)
+    steward && steward == current_steward
+  end
+
   def get_recent_logs
     out = []
     Steward.descending(:last_sign_in_at).limit(10).each do |steward|
@@ -16,7 +20,7 @@ module ApplicationHelper
         out << capture do #html_safe
           div_for log do
             link_to(log.creator_name,steward_logs_path(log.steward))
-            render log
+            render({:partial => 'logs/log', :object => log})
           end
         end
       end

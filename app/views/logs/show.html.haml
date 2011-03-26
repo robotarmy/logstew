@@ -1,5 +1,5 @@
 - content_for(:title) do
-  %h1=logs_title
+  %h1=logs_title_for(log.steward)
   %h5
     =link_to "see more journal entries by #{log.creator_name}",steward_logs_path(log.steward) 
 .show
