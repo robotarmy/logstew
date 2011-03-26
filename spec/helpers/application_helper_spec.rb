@@ -1,18 +1,69 @@
 require 'spec_helper'
 
 describe ApplicationHelper do
-  before do
-    @steward = Factory(:steward)
-    @steward.logs.create(:story => 'hiy')
-    @steward1 = Factory(:steward)
-    @steward1.logs.create(:story => 'soup')
-  end
-  it '#get_recent_logs' do
-    helper.get_recent_logs.should == [@steward.logs.first,@steward1.logs.first]
+  let(:uploader) do
+    filename = File.join(Rails.root,'public','images','rails.png')
+    CarrierWave::Test::Matchers::ImageLoader.load_image(filename)
   end
 
-  it "#render_last_post" do
-    helper.render_last_posts.should match(/#{@steward.logs.first.title}/)
-    helper.render_last_posts.should match(/#{@steward1.logs.first.title}/)
+  let(:me) do
+    Factory(:steward)
+  end
+
+  let(:my_log_title) do
+    me.logs.create(:story => 'oohya', 
+                   :title => 'oohyatitle', 
+                   :image => nil)
+  end
+
+  let(:my_log_no_title) do
+    me.logs.create(:story => 'hiy', 
+                   :title => '', 
+                   :image => nil)
+  end
+
+  let(:you) do
+    Factory(:steward)
+  end
+
+  let(:you_log_image) do
+    you.logs.create(:story => 'soup',
+                    :image => uploader)
+  end
+
+  let(:you_log_no_image) do
+    you.logs.create(:story => 'soup',
+                    :image => nil)
+  end
+
+
+  describe "should not include posts without an image or title" do
+    before do
+      my_log_no_title
+      you_log_no_image
+    end
+    it '#get_recent_logs' do
+      helper.get_recent_logs.should be_empty
+    end
+    it "#render_last_post" do
+      helper.render_last_posts.should_not match(/#{steward_logs_path(me)}/)
+      helper.render_last_posts.should_not match(/#{steward_logs_path(you)}/)
+    end
+  end
+
+  describe "should include posts with an image or title" do
+    before do
+      my_log_title
+      you_log_image
+    end
+    it '#get_recent_logs' do
+      helper.get_recent_logs.should == [ my_log_title,
+                                         you_log_image ]
+    end
+
+    it "#render_last_post" do
+      helper.render_last_posts.should match(/#{steward_logs_path(me)}/)
+      helper.render_last_posts.should match(/#{steward_logs_path(you)}/)
+    end
   end
 end
