@@ -5,18 +5,20 @@ module LogsHelper
   def logs
     @logs
   end
-  def current_user_content 
-    if @steward == current_steward
+
+  def capture_if_current_steward(steward)
+    if is_current_steward?(steward)
       capture do
         yield
       end
     end
   end
-  def logs_title
-    if @steward == current_steward
-      link_to "my stewardship journal", steward_logs_path(@steward)
+
+  def logs_title_for(steward)
+    if is_current_steward?(steward)
+      link_to "my stewardship journal", steward_logs_path(steward)
     else
-      link_to "#{@steward.name.capitalize}'s stewardship journal", steward_logs_path(@steward)
+      link_to "#{steward.name.capitalize}'s stewardship journal", steward_logs_path(steward)
     end
   end
   
@@ -29,7 +31,7 @@ module LogsHelper
   end
 
   def edit_for(log)
-    current_user_content do
+    capture_if_current_steward(log.steward) do
       link_to('edit', edit_log_path(log), :class => 'edit')
     end
   end
@@ -53,6 +55,7 @@ module LogsHelper
               :class => size )
     end
   end
+
   def title_for(log)
     title = log.title
     if size == :thumb
@@ -61,6 +64,7 @@ module LogsHelper
     end
     title
   end
+
   def story_for(log)
     log_story = log.story
     if size == :thumb

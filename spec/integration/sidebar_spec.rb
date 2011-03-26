@@ -16,8 +16,8 @@ describe 'Sidebar -' do
     s
   end
 
-  let(:log) do
-    Factory(:log, :story => 'storytime', :title => 'cake is nice')
+  let(:my_log) do
+    Factory(:log, :story => 'storytime', :title => 'cake is nice', :steward => me)
   end
 
   let(:another_log) do
@@ -26,35 +26,49 @@ describe 'Sidebar -' do
 
   context "After Log in" do
     before(:each) do
-      log
+      my_log
       another_log
       sign_in me
     end
     context "sidebar page" do
       it "has recent posts" do
-        visit(steward_logs_path(log.steward))
-        page.save_and_open_page
+        visit(steward_logs_path(my_log.steward))
         within('.starboard') do
-          page.should have_content(log.title)
-          page.should have_content(log.steward.name)
+          page.should have_content(my_log.title)
+          page.should have_content(my_log.steward.name)
           page.should have_content(another_log.title)
           page.should have_content(another_log.steward.name)
         end
       end
+      
+      
+      it "has an edit link for my logs" do
+        within("#log_#{my_log.id}") do 
+          page.should have_css('a.edit', :text => 'edit')        
+        end
+      end
+
+      it "doesn't have an edit link for other steward's logs" do
+        save_and_open_page
+        within("#log_#{another_log.id}") do 
+          page.should_not have_css('a.edit', :text => 'edit')        
+        end
+      end
+
+
       it "has title link" do
-        visit(steward_logs_path(log.steward))
-        page.should have_css('.starboard .log .title a', :text => log.title)
-        click_link(log.title)
-        current_path.should == steward_log_path(log.steward,log)
+        visit(steward_logs_path(my_log.steward))
+        page.should have_css('.starboard .log .title a', :text => my_log.title)
+        click_link(my_log.title)
+        current_path.should == steward_log_path(my_log.steward,my_log)
       end
 
       it "has username link" do
-        visit(steward_logs_path(log.steward))
-        page.should have_css('.starboard .log .name a', :text => log.steward.name)
-        click_link(log.steward.name)
-        current_path.should == steward_logs_path(log.steward)
+        visit(steward_logs_path(my_log.steward))
+        page.should have_css('.starboard .log .name a', :text => my_log.steward.name)
+        click_link(my_log.steward.name)
+        current_path.should == steward_logs_path(my_log.steward)
       end
-
     end
   end
 end

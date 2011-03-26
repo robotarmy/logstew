@@ -7,6 +7,7 @@ Logstew::Application.routes.draw do
     resources :logs 
     resources :addresses , :only => [:new,:create]
   end
+
   resource :op do
     get :host
     get :git
