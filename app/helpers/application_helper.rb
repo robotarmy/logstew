@@ -12,9 +12,8 @@ module ApplicationHelper
   def get_recent_logs
     out = []
     Steward.descending(:last_sign_in_at).limit(10).each do |steward|
-      log =  steward.logs.desc(:updated_at).select do |log| 
-        !log.title.nil? || !log.image.nil?
-      end.first
+      log =  steward.logs.where({:title.nin => ["",nil],
+                                 :image_filename.nin => ["",nil]}).desc(:updated_at).first
       out << log if log
     end
     out
