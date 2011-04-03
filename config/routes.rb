@@ -1,4 +1,6 @@
 Logstew::Application.routes.draw do
+  resources :feedback
+
   devise_for :stewards
 
   resources :comments , :only => [:create]

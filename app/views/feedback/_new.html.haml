@@ -1,0 +1,6 @@
+=form_for Feedback.new do |f|
+  =feedback_questions_in(f)
+  =feedback_page_url_in(f)
+  =feedback_comment_in(f)
+  =f.submit "Send Feedback"
+

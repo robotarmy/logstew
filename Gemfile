@@ -10,6 +10,7 @@ gem 'mini_magick'
 gem 'whenever'
 
 group :development, :test do
+  gem 'akephalos'
   gem 'rails-generators'
   gem 'wrong'
   gem 'hpricot'

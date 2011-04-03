@@ -12,6 +12,7 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module Logstew
   class Application < Rails::Application
+    config.action_view.javascript_expansions[:defaults] = %w(jquery rails )
     config.autoload_paths += %W(#{config.root}/lib/tools)
     config.plugins = [ :all ]
     config.middleware.use 'GridFs'
