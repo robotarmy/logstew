@@ -22,6 +22,10 @@ body,p,img,h1,h2,h3,h4 {
   border:0;
 }
 body {
+  .hidden {
+    display:none;
+  }
+
   font-family: $font;
 	font-size: $fontsize;
 	color: $color;

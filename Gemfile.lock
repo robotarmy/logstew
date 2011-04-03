@@ -35,6 +35,9 @@ GEM
       activemodel (= 3.0.4)
       activesupport (= 3.0.4)
     activesupport (3.0.4)
+    akephalos (0.2.5)
+      capybara (~> 0.4.0)
+      jruby-jars
     archive-tar-minitar (0.5.2)
     arel (2.0.9)
     bcrypt-ruby (2.1.4)
@@ -98,6 +101,7 @@ GEM
     highline (1.6.1)
     hpricot (0.8.3)
     i18n (0.5.0)
+    jruby-jars (1.6.0)
     json (1.4.6)
     json_pure (1.5.1)
     kgio (2.3.2)
@@ -225,6 +229,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  akephalos
   bson_ext
   capistrano
   capybara

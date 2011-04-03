@@ -6,7 +6,10 @@
       %li=link_to('sign out',destroy_steward_session_path)
     - else
       %li=link_to('HOME',root_path)
+    %li=feedback_link
 
+.feedback.hidden
+  = render :partial => 'feedback/new'
 .notice
   = notice
 .alert

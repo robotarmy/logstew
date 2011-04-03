@@ -1,6 +1,8 @@
 require 'action_dispatch'
 require 'capybara/rails'
 require 'capybara/dsl'
+require 'akephalos'
+Capybara.javascript_driver = :akephalos
 
 module RSpec::Rails
   module IntegrationExampleGroup

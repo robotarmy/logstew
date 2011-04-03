@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  helper :feedback
+
   protect_from_forgery
 
   private
