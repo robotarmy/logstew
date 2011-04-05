@@ -12,14 +12,12 @@ describe ApplicationHelper do
 
   let(:my_log_title) do
     me.logs.create(:story => 'oohya', 
-                   :title => 'oohyatitle', 
-                   :image => nil)
+                   :title => 'oohyatitle')
   end
 
   let(:my_log_no_title) do
     me.logs.create(:story => 'hiy', 
-                   :title => '', 
-                   :image => nil)
+                   :title => '')
   end
 
   let(:you) do
@@ -28,12 +26,11 @@ describe ApplicationHelper do
 
   let(:you_log_image) do
     you.logs.create(:story => 'soup',
-                    :image => uploader)
+                    :image_filename => 'name_of_file.png')
   end
 
   let(:you_log_no_image) do
-    you.logs.create(:story => 'soup',
-                    :image => nil)
+    you.logs.create(:story => 'soup')
   end
 
 
