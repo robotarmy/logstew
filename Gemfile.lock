@@ -47,8 +47,8 @@ GEM
     capistrano (2.5.19)
       highline
       highline
-      net-scp (>= 1.0.0)
       net-scp
+      net-scp (>= 1.0.0)
       net-sftp
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
@@ -247,7 +247,7 @@ DEPENDENCIES
   hpricot
   launchy
   mini_magick
-  mongoid (= 2.0.0.rc.7)
+  mongoid
   rails
   rails-generators
   rails3-generators
