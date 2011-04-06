@@ -13,10 +13,8 @@ module ApplicationHelper
     out = []
     Steward.descending(:last_sign_in_at).limit(10).each do |steward|
       log = steward.logs.all.or(
-        :image_filename.exists => true, 
-        :image_filename.ne => '').or(
-        {:title.exists => true, 
-          :title.ne => ''}).first
+        :image_filename.exists => true).or(
+        :title.exists => true).first
 
       out << log if log
     end
