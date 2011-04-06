@@ -16,8 +16,7 @@ describe ApplicationHelper do
   end
 
   let(:my_log_no_title) do
-    me.logs.create(:story => 'hiy', 
-                   :title => '')
+    me.logs.create(:story => 'hiy')
   end
 
   let(:you) do
