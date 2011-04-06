@@ -6,7 +6,7 @@ class Feedback
     def questions
       ['what is your question?',
        'what is your question? 2',
-      'e']
+       'what is your question? 3']
     end
   end
 end
