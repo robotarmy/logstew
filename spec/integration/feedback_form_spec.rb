@@ -32,7 +32,7 @@ describe 'Feedback form' do
     it "uses page url according to the page the form displays on" do
       visit steward_logs_path(steward)
       click_on 'Give us Feedback'
-      page.should have_css('feedback_page_url', :text => steward_logs_path(steward))
+      page.should have_css('#feedback_page_url', :value => steward_logs_path(steward))
     end
   end
 
