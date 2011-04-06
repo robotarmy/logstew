@@ -26,14 +26,22 @@ describe LogsHelper do
       steward = me
       helper.should_receive(:current_steward).and_return(me)
       assert {
+<<<<<<< HEAD
+        helper.logs_title_for(@steward).scan(/'My stewardship journal'/)
+=======
         helper.logs_title_for(steward).scan(/'My stewardship journal'/)
+>>>>>>> log_title_or_image_sidebar_helper
       }
     end
     it "is your logs" do
       steward = you
       helper.should_receive(:current_steward).and_return(me)
       assert {
+<<<<<<< HEAD
+        helper.logs_title_for(@steward).scan(/"You's stewardship journal"/)
+=======
         helper.logs_title_for(steward).scan(/"You's stewardship journal"/)
+>>>>>>> log_title_or_image_sidebar_helper
       }
     end
 
