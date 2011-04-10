@@ -13,5 +13,7 @@ And I should see "stewardship journal"
 Scenario: I visit "/stewards/sign_in"
 Given I am on the new_steward_session page
 Then I should not see "You can join and start"
-And I should see "stewardship journal"
+Then show me the page
+And I should see "NEW" 
+And I should see "my Stewardship" 
 
