@@ -4,7 +4,8 @@ end
 
 Given /^I am a steward with email "([^"]*)" and password "([^"]*)"$/ do |email, password|
 stew = Given "I am a steward with email \"#{email}\" and password \"#{password}\" and no address"
-stew.create_address(:name => 'Hayes Valley Farm',:zipcode => '94102')
+stew.create_address(:public_name => 'Johhny', :public_location_name => 'Hayes Valley Farm',:zipcode => '94102')
+
 end
 
 Given /^I am a steward with email "([^"]*)" and password "([^"]*)" and no address$/ do |email, password|
@@ -18,3 +19,5 @@ When 'I fill in "steward[email]" with "exist@robotarmyma.de" within "#sign_in"'
 When 'I fill in "steward[password]" with "exist" within "#sign_in"'
 And 'I press "enter"'
 end
+
+
