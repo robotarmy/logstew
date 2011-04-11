@@ -6,13 +6,6 @@ module LogsHelper
     @logs
   end
 
-  def capture_if_current_steward(steward)
-    if is_current_steward?(steward)
-      capture do
-        yield
-      end
-    end
-  end
 
   def logs_title_for(steward)
     if is_current_steward?(steward)
@@ -31,7 +24,7 @@ module LogsHelper
   end
 
   def edit_for(log)
-    capture_if_current_steward(log.steward) do
+    capture_if_current_steward_is(log.steward) do
       link_to('edit', edit_log_path(log), :class => 'edit')
     end
   end

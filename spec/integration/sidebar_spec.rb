@@ -49,7 +49,6 @@ describe 'Sidebar -' do
       end
 
       it "doesn't have an edit link for other steward's logs" do
-        save_and_open_page
         within("#log_#{another_log.id}") do 
           page.should_not have_css('a.edit', :text => 'edit')        
         end

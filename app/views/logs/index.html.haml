@@ -1,7 +1,7 @@
 - content_for(:title) do
   %h1=logs_title_for(@steward)
   %h4
-    = capture_if_current_steward(@steward) do
+    = capture_if_current_steward_is(@steward) do
       = link_to("new journal entry",new_log_path)
 .index
   = render logs

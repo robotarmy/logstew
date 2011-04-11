@@ -3,6 +3,14 @@ module ApplicationHelper
   def is_current_steward?(steward)
     steward && steward == current_steward
   end
+  
+  def capture_if_current_steward_is(steward)
+    if is_current_steward?(steward)
+      capture do
+        yield
+      end
+    end
+  end
 
 
   def render_last_posts
