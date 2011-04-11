@@ -4,9 +4,9 @@ class Feedback
   
   class << self
     def questions
-      ['what is your question?',
-       'what is your question? 2',
-       'what is your question? 3']
+      [%%Is the purpose of this page clear to you?%,
+       %%What were you expecting to find on this page?%,
+       %%What would you use this page for?%]
     end
   end
 end

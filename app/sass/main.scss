@@ -129,6 +129,19 @@ body {
         font-size:$labelsize;
         font-variant:small-caps;
     }
+  .new_feedback {
+    background:#fff;
+    border:#ccc solid 1px;
+    padding:1em;
+     * { 
+      display:block;
+    }
+    textarea {
+      width: 98%;
+      height: 60px;
+    }
+
+  }
   .log {
     a {
       font-size:$subtextsize;
