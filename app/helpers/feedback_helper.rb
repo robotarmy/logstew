@@ -25,7 +25,7 @@ module FeedbackHelper
     # the dom in a manner that accords with a determisitic
     # structure
     Feedback.questions.each_with_index do |question|
-      out << label_tag(%%feedback[answer][q]%, question)
+      out << label_tag(%%feedback[answers][q]%, question)
       out << text_area_tag(%%feedback[answers][#{question}]%, '')
     end
     out.join.html_safe
@@ -34,6 +34,13 @@ module FeedbackHelper
     out = []
     out << field.label(:comment, "Comments")
     out << field.text_area(:comment, :value => '')
+    out.join.html_safe
+  end
+  def answers_for(feedback)
+    out = []
+    feedback.answers.each do |q, a|
+      out << render(:partial => "question_answer", :locals => {:question => q, :answer => a})
+    end
     out.join.html_safe
   end
 end

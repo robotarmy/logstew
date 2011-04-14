@@ -1,6 +1,6 @@
 require 'spec_helper'
 describe 'Feedback form' do
-  describe "logged out" do
+  describe "when logged out" do
     before do
       visit root_path
     end

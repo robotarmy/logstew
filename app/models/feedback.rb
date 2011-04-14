@@ -1,7 +1,8 @@
 class Feedback
   include Mongoid::Document
   include Mongoid::Timestamps
-  
+  field :answers
+  field :comment
   class << self
     def questions
       [%%Is the purpose of this page clear to you?%,
