@@ -1,0 +1,5 @@
+Autotest.add_hook :initialize do |at|
+  at.add_mapping(%r%^spec/(integration)/.*rb$%) {|filename, _|
+    filename
+  }
+end
