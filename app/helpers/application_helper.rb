@@ -20,13 +20,18 @@ module ApplicationHelper
   def get_recent_logs
     out = []
     Steward.descending(:last_sign_in_at).limit(10).each do |steward|
-      log = steward.logs.any_of(
+      #
+      # In order of preference
+      #
+      log = steward.logs.where(
         {:image_filename.exists => true,
-         :title.exists => false},
+         :title.exists => true}).desc(:updated_at).first
+      log = steward.logs.where(
+        {:image_filename.exists => true,
+         :title.exists => false}).desc(:updated_at).first if !log
+      log = steward.logs.where(
         {:image_filename.exists => false,
-         :title.exists => true},
-        ).desc(:updated_at).first
-
+         :title.exists => true}).desc(:updated_at).first if !log
       out << log if log
     end
     out
