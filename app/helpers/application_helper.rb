@@ -21,8 +21,11 @@ module ApplicationHelper
     out = []
     Steward.descending(:last_sign_in_at).limit(10).each do |steward|
       log = steward.logs.any_of(
-        {:image_filename.exists => true, :image_filename.ne => ""},
-        {:title.exists => true, :title.ne => ""}).first
+        {:image_filename.exists => true,
+         :title.exists => false},
+        {:image_filename.exists => false,
+         :title.exists => true},
+        ).desc(:updated_at).first
 
       out << log if log
     end
