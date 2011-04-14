@@ -3,6 +3,8 @@ class Feedback
   include Mongoid::Timestamps
   field :answers
   field :comment
+  field :page_url
+  field :steward_email
   class << self
     def questions
       [%%Is the purpose of this page clear to you?%,

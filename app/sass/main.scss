@@ -142,6 +142,26 @@ body {
     }
 
   }
+  .feedback {
+    border:1px solid gray;
+    padding:1em;
+    * {
+      margin-left:1em;
+    }
+    label {
+      font-variant:small-caps;
+      display:block;
+      margin-left:0em;
+    }
+     
+    .question {
+      font-style: italic;
+      margin-left:0em;
+    }
+    .comment, .page_url, .steward_email,.answer {
+      background:#ccc;
+    }
+  }
   .log {
     a {
       font-size:$subtextsize;
