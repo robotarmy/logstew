@@ -1,4 +1,4 @@
 #sign_up{:style => 'display:none'}
-  = form_tag steward_registration_path do
+  = form_tag(steward_registration_path, :onsubmit=>"javascript:return confirm('I understand that I can only upload images that i own or have been released to the creative commons / public domain');") do
     = render :partial => 'stewards/registrations/form_body'
 
