@@ -7,3 +7,5 @@ md*
 .*.swo
 public/uploads
 mongo
+dump/
+*.tar.gz
