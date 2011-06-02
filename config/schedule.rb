@@ -11,7 +11,7 @@
 # RVM patch
 #
 
-set :job_template, "rvm-shell -l -c ':job'"
+set :job_template, "/usr/local/bin/rvm-shell -l -c ':job'"
 
  every 12.hours do
   rake "backup:database"
