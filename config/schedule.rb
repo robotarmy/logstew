@@ -10,10 +10,11 @@
 #
 # RVM patch
 #
-job_type :rvm_rake,    "cd :path && RAILS_ENV=:environment rvm-shell rake :task :output"
+
+set :job_template, "rvm-shell -l -c ':job'"
 
  every 12.hours do
-  rvm_rake "backup:database"
+  rake "backup:database"
  end
 #   runner "MyModel.some_method"
 #   rake "some:great:rake:task"
