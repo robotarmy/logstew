@@ -7,8 +7,13 @@
 #
 # set :output, "/path/to/my/cron_log.log"
 #
+#
+# RVM patch
+#
+job_type :rvm_rake,    "cd :path && RAILS_ENV=:environment rvm-shell rake :task :output"
+
  every 12.hours do
-  rake "backup:database"
+  rvm_rake "backup:database"
  end
 #   runner "MyModel.some_method"
 #   rake "some:great:rake:task"
