@@ -1,7 +1,7 @@
 Capistrano::Configuration.instance(:must_exist).load do
   set :whenever_command, "bundle exec whenever"
-  set :rvm_type, :system
-  set :rvm_ruby_string, 'ruby-1.9.2' 
+  set :rvm_type, :user
+  set :rvm_ruby_string, 'ruby-1.9.2'
   set :user , :hvf.to_s
   set :use_sudo, false
   set :application, "logstew"

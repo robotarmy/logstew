@@ -1,5 +1,6 @@
 Capistrano::Configuration.instance(:must_exist).load do
 after "deploy:symlink","deploy:logstew_symlink"
+after "deploy", "rvm:trust_rvmrc"
 
  namespace :deploy do
   %w(start stop restart).each do |action|   
@@ -25,6 +26,13 @@ after "deploy:symlink","deploy:logstew_symlink"
    end
    task :stop, :roles => :app do
      run "kill -QUIT `cat #{deploy_to}/shared/pids/unicorn.pid`"  
+   end
+ end
+
+ #http://beginrescueend.com/integration/capistrano/
+ namespace :rvm do
+   task :trust_rvmrc do
+      run "rvm rvmrc trust #{release_path}"
    end
  end
 
