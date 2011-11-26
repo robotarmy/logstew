@@ -18,13 +18,14 @@ after "deploy", "rvm:trust_rvmrc"
  end
 
  namespace :unicorn do
-   start_unicorn_cmd = "cd #{deploy_to}/current && bundle exec unicorn -c #{deploy_to}/current/config/unicorn.rb -E production -D config.ru"
-
+  def start_unicorn_in(deploy_to_directory)
+   "cd #{deploy_to_directory}/current && bundle exec unicorn -c #{deploy_to_directory}/current/config/unicorn.rb -E production -D config.ru"
+  end
    task :restart, :roles => :app do
-     run "kill -USR2 `cat #{deploy_to}/shared/pids/unicorn.pid` || #{start_unicorn_cmd}"
+     run "kill -USR2 `cat #{deploy_to}/shared/pids/unicorn.pid` || #{start_unicorn_in(deploy_to)}"
    end
    task :start, :roles => :app do
-     run start_unicorn_cmd
+     run start_unicorn_in(deploy_to)
    end
    task :stop, :roles => :app do
      run "kill -QUIT `cat #{deploy_to}/shared/pids/unicorn.pid`"
