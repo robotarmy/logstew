@@ -1,15 +1,14 @@
-defaults: &defaults
+dev_defaults: &dev_defaults
+  uri: mongodb://localhost:27017
 
 production:
   database: logstew_production
   uri: mongodb://md1.internal:27017
 
 development:
-  <<: *defaults
+  <<: *dev_defaults
   database: logstew_development
-  uri: mongodb://localhost:27017
 
 test:
-  <<: *defaults
+  <<: *dev_defaults
   database: logstew_test
-  uri: mongodb://localhost:27017
