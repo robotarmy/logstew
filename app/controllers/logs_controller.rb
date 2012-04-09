@@ -17,7 +17,11 @@ class LogsController < ApplicationController
 
   def show
     @log = Log.find(params[:id])
-    render :layout => 'full' 
+    if @log.title.length > 0 || @log.story.length > 0
+      render :layout => 'full_og'
+    else  
+      render :layout => 'full' 
+    end
   end
 
   def edit
