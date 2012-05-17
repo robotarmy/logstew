@@ -1,4 +1,5 @@
 class LogsController < ApplicationController
+  include CarrierWave::MiniMagick
   before_filter :authenticate_steward! , :except => [:show]
   before_filter :steward
 

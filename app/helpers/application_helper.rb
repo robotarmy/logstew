@@ -55,4 +55,30 @@ module ApplicationHelper
     end
     out
   end
+  
+  def og_title(log)
+    if log.title.length > 0
+      og_title = log.title
+    else
+      og_title = log.story.split('.')[0]
+    end
+  end
+  
+  def og_description(log)
+    if log.story.length > 0
+      sentences = log.story.split('.')
+      og_description = "#{sentences[0..[sentences.length, 1].min].join('.')}."
+    else   
+      og_description = log.title
+    end
+    og_description 
+  end
+  
+  def og_image_url(log)
+    og_image_url = "http://#{request.env['HTTP_HOST']}/images/stories/hvf_logo_bg_small.png"
+    if !log.image.url.nil?
+      og_image_url = "http://#{request.env['HTTP_HOST']}#{log.image.url(:fourfifty)}"
+    end
+    og_image_url
+  end
 end
